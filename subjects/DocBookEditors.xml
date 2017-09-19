@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article version="5.1" xmlns="http://docbook.org/ns/docbook"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xila="http://www.w3.org/2001/XInclude/local-attributes"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:trans="http://docbook.org/ns/transclusion"
+         xmlns:svg="http://www.w3.org/2000/svg"
+         xmlns:m="http://www.w3.org/1998/Math/MathML"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <title>Редакторы DocBook</title>
+
+    <author>
+      <personname><surname>Кряжевских</surname><firstname>Сергей</firstname></personname>
+
+      <email>&lt;soliverr@gmail.com&gt;</email>
+    </author>
+
+    <copyright>
+      <year>2016</year>
+
+      <holder>Public Domain</holder>
+    </copyright>
+
+    <edition>1.0</edition>
+
+    <pubdate>2017-09-18</pubdate>
+
+    <abstract xml:id="abstract">
+      <para>Выбор редакторов и утилит для работы с DocBook в проекте <emphasis
+      role="strong">Double</emphasis>.</para>
+    </abstract>
+  </info>
+
+  <section>
+    <title>Выбор редакторов для работы с DocBook</title>
+
+    <para>Описать следующие программы</para>
+
+    <itemizedlist>
+      <listitem>
+        <para><link
+        xlink:href="http://www.xmlmind.com/xmleditor/docbook_editor.html">XMLmind
+        DocBook Editor</link></para>
+      </listitem>
+
+      <listitem>
+        <para><link
+        xlink:href="https://sourceforge.net/projects/rtextdoc">RTextDoc</link></para>
+      </listitem>
+    </itemizedlist>
+  </section>
+</article>

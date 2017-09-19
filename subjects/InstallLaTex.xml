@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<article version="5.0" xml:lang="ru" xmlns="http://docbook.org/ns/docbook"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:ns5="http://www.w3.org/2000/svg"
+         xmlns:ns4="http://www.w3.org/1998/Math/MathML"
+         xmlns:ns3="http://www.w3.org/1999/xhtml"
+         xmlns:ns="http://docbook.org/ns/docbook">
+  <info>
+    <title>Установка LaTeX</title>
+
+    <subtitle>Подготовка к вёрстке документов с помощью LaTeX</subtitle>
+
+    <authorgroup>
+      <author>
+        <personname><surname>Кряжевских</surname><firstname>Сергей</firstname></personname>
+
+        <email>&lt;soliverr@gmail.com&gt;</email>
+      </author>
+    </authorgroup>
+
+    <copyright>
+      <year>2016</year>
+
+      <holder>Public Domain</holder>
+    </copyright>
+
+    <edition>1.0</edition>
+
+    <date>2016-11-29</date>
+
+    <abstract xml:id="abstract">
+      <para>Установка базового программного обеспечения издательской системы
+      LaTex и дополнительных пакетов LaTex.</para>
+    </abstract>
+  </info>
+
+  <section xml:id="installation_base">
+    <title>Установка базового программного обеспечения LaTeX</title>
+
+    <para>Для дистрибутивов Ubuntu ОС Linux издательская среда LaTex доступна
+    в виде готовых пакетов дистрибутива Ubuntu. Для ОС Linux
+    общераспространённым является дистрибутив LaTeX <link
+    xlink:href="http://www.tug.org/texlive/">Tex Live</link>. Он включён во
+    все основные дистрибутивы ОС Linux.</para>
+
+    <para>В Ubuntu 16.04 "Xenial" уже доступен <link
+    xlink:href="https://www.latex-project.org/latex3/">LaTex версии
+    3</link>.</para>
+
+    <para>Для установки издательской системы LaTeX необходимо выполнить
+    команду:</para>
+
+    <cmdsynopsis>
+      <command>sudo</command>
+
+      <command>aptitude</command>
+
+      <arg choice="req">install</arg>
+
+      <arg choice="plain">texlive-latex3</arg>
+    </cmdsynopsis>
+
+    <para>Поддержка набора текстов на национальных языках для LaTeX доступна в
+    виде отдельных пакетов дистрибутива Ubuntu. Список языковых пакетов можно
+    посомотреть, выполнив команду:</para>
+
+    <cmdsynopsis>
+      <command>aptitude</command>
+
+      <arg choice="req">search</arg>
+
+      <arg choice="plain">texlive-lang</arg>
+    </cmdsynopsis>
+
+    <para>Может быть получен следующий список пакетов:</para>
+
+    <computeroutput>p texlive-lang-african - TeX Live: African scripts p
+    texlive-lang-all - TeX Live: metapackage depending on all TeX Live
+    language packages v texlive-lang-all:i386 - p texlive-lang-arabic - TeX
+    Live: Arabic p texlive-lang-chinese - TeX Live: Chinese p texlive-lang-cjk
+    - TeX Live: Chinese/Japanese/Korean (base) p texlive-lang-cyrillic - TeX
+    Live: Cyrillic v texlive-lang-cyrillic:i386 - p texlive-lang-czechslovak -
+    TeX Live: Czech/Slovak v texlive-lang-czechslovak:i386 - p
+    texlive-lang-english - TeX Live: US and UK English v
+    texlive-lang-english:i386 - p texlive-lang-european - TeX Live: Other
+    European languages p texlive-lang-french - TeX Live: French p
+    texlive-lang-german - TeX Live: German p texlive-lang-greek - TeX Live:
+    Greek p texlive-lang-indic - TeX Live: Indic scripts p
+    texlive-lang-italian - TeX Live: Italian p texlive-lang-japanese - TeX
+    Live: Japanese p texlive-lang-korean - TeX Live: Korean p
+    texlive-lang-other - TeX Live: Other languages p texlive-lang-polish - TeX
+    Live: Polish p texlive-lang-portuguese - TeX Live: Portuguese p
+    texlive-lang-spanish - TeX Live: Spanish</computeroutput>
+
+    <para>Можно установить все языковые пакеты LaTex
+    <emphasis>texlive-lang-all</emphasis>, либо выбрать только необходимые. Я
+    использую в основном только русский и английский языки:</para>
+
+    <cmdsynopsis>
+      <command>sudo</command>
+
+      <command>aptitude</command>
+
+      <arg choice="req">install</arg>
+
+      <arg choice="plain">texlive-lang-english</arg>
+
+      <arg choice="plain">texlive-lang-cyrillic</arg>
+    </cmdsynopsis>
+
+    <para>Также, необходимо установить шрифты для работы с кириллическим
+    символами:</para>
+
+    <cmdsynopsis>
+      <command>sudo</command>
+
+      <command>aptitude</command>
+
+      <arg choice="req">install</arg>
+
+      <arg choice="plain">texlive-fonts-extra</arg>
+    </cmdsynopsis>
+
+    <para>В случае отсутствия требуемых шрифтов при вёрстке документа LaTeX
+    может генерировать вот такую ошибку (см. подсказку на <seealso>
+        <link
+        href="http://tex.stackexchange.com/questions/5088/what-is-wrong-with-cyrillic-package">StackExchange</link>
+      </seealso>):</para>
+
+    <computeroutput>! Font T2A/cmr/m/n/10=larm1000 at 10.0pt not loadable:
+    Metric (TFM) file not found.</computeroutput>
+  </section>
+
+  <section xml:id="installation_csl">
+    <title>Установка пакета поддержки церковно-славянского языка в
+    LaTeX</title>
+
+    <subsection>
+      <title>Установка пакета CSLTeX</title>
+
+      <para>Для работы с церковно-славянским языком разработан пакет <link
+      href="https://sites.google.com/site/csltex/">CSLTeX</link>. Пакет не
+      доступен в официальном архиве <link
+      href="https://www.ctan.org/">CTAN</link>, но может быть достаточно легко
+      установлен по процедуре, описанной в <link
+      href="http://csltex.googlepages.com/cslinstall.html">инструкции по
+      установке</link>.</para>
+
+      <para>Здесь я приведу свой способ установки пакета CSLTeX.</para>
+
+      <para>Необходимо скачать <link
+      href="http://csltex.googlepages.com/csltex-public.zip">файл дистрибутива
+      CSLTeX</link>:</para>
+
+      <cmdsynopsis>
+        <command>wget</command>
+
+        <arg
+        choice="plain">http://csltex.googlepages.com/csltex-public.zip</arg>
+      </cmdsynopsis>
+
+      <para>Пакет можно установить только для конкретного пользователя ОС
+      Linux, либо сделать его общедоступным. Я устанавливаю пакет в
+      общедоступный локальный каталог пакетов LaTeX
+      <varname>TEXMF-LOCAL</varname>. Получить имя каталога в системе можно,
+      запросив у LaTeX значение переменной
+      <varname>TEXMFLOCAL</varname>:</para>
+
+      <cmdsynopsis>
+        <command>kpsewich</command>
+
+        <arg choice="plain">-expand-var '$TEXMFLOCAL'</arg>
+      </cmdsynopsis>
+
+      <para>Результат выполнения этой команды может быть следующим:</para>
+
+      <computeroutput>/usr/local/share/texmf</computeroutput>
+
+      <para>Необходимо распактовать дистрибутив CSLTeX в этот каталог:</para>
+
+      <cmdsynopsis>
+        <command>sudo</command>
+
+        <command>unzip</command>
+
+        <arg choice="plain">-d <replaceable>texmflocaldir</replaceable></arg>
+
+        <arg choice="plain">csltex-public.zip</arg>
+      </cmdsynopsis>
+
+      <para>Обновляем список поиска пакетов LaTeX:</para>
+
+      <cmdsynopsis>
+        <command>sudo</command>
+
+        <command>texhash</command>
+      </cmdsynopsis>
+
+      <para>Добавляем список шрифтов пакета CSLTeX в списки поиска шрифтов
+      LaTeX:</para>
+
+      <cmdsynopsis>
+        <command>sudo</command>
+
+        <command>updmap-sys</command>
+
+        <arg choice="req">--enable Map&gt;</arg>
+
+        <arg choice="plain">cslav.map</arg>
+      </cmdsynopsis>
+
+      <cmdsynopsis>
+        <command>sudo</command>
+
+        <command>updmap</command>
+      </cmdsynopsis>
+
+      <cmdsynopsis>
+        <command>updmap</command>
+      </cmdsynopsis>
+
+      <para>Если этого не сделать, то LaTeX не сможет найти шрифты при выводе
+      изображения текста и может сгенерировать следующую ошибку:</para>
+
+      <computeroutput>kpathsea: Running mktexpk --mfmode / --bdpi 600 --mag
+      1+300/600 --dpi 900 stuscslt mktexpk: don't know how to create bitmap
+      font for stuscslt. mktexpk: perhaps stuscslt is missing from the map
+      file. kpathsea: Appending font creation commands to
+      missfont.log.</computeroutput>
+    </subsection>
+
+    <subsection><title>Проверка работоспособности пакета CSLTeX</title>
+    <para>Для праверки работоспособности пакета CSLTeX можно воспользоваться
+    <link href="http://csltex.googlepages.com/primer.html">файлом
+    примера</link>. Скачайте исходный файл:</para> <cmdsynopsis>
+        <command>wget</command>
+
+        <arg choice="req">-O -&gt;</arg>
+
+        <arg choice="plain">http://csltex.googlepages.com/primer.html</arg>
+
+        <command>|</command>
+
+        <command>sed</command>
+
+        <arg choice="plain">-e 's#&lt;pre&gt;##'</arg>
+
+        <arg choice="plain">-e 's#&lt;/pre&gt;##'</arg>
+
+        <command>&gt;</command>
+
+        <arg choice="plain">
+          <replaceable>primer.tex</replaceable>
+        </arg>
+      </cmdsynopsis> <para>Исходный файл представлен в кодировке <emphasis
+    role="strong">KOI8-R</emphasis>, поэтому его можно перекодировать в
+    кодировку <emphasis role="strong">UTF-8</emphasis> командой:</para>
+    <cmdsynopsis>
+        <command>iconv</command>
+
+        <arg choice="req">-f koi8-r</arg>
+
+        <command>&lt;</command>
+
+        <arg choice="plain">
+          <replaceable>primer.tex</replaceable>
+        </arg>
+
+        <command>&gt;</command>
+
+        <arg choice="plain">
+          <replaceable>primer_u.tex</replaceable>
+        </arg>
+      </cmdsynopsis> <para>Без ошибок должны отработать команды вёрстки
+    примера в LaTeX и PDFLaTex:</para> load './Double.rb' <cmdsynopsis>
+        <command>latex</command>
+
+        <arg choice="plain">
+          <replaceable>primer.tex</replaceable>
+        </arg>
+      </cmdsynopsis> <cmdsynopsis>
+        <command>pdflatex</command>
+
+        <arg choice="plain">
+          <replaceable>primer.tex</replaceable>
+        </arg>
+      </cmdsynopsis> <para>Или:</para> <cmdsynopsis>
+        <command>latex</command>
+
+        <arg choice="plain">
+          <replaceable>primer_u.tex</replaceable>
+        </arg>
+      </cmdsynopsis> <cmdsynopsis>
+        <command>pdflatex</command>
+
+        <arg choice="plain">
+          <replaceable>primer_u.tex</replaceable>
+        </arg>
+      </cmdsynopsis> <para>При открытии полученные свёрстанные документы
+    должны отображаться без ошибок:</para> <cmdsynopsis>
+        <command>xdvi</command>
+
+        <arg choice="plain">
+          <replaceable>primer.dvi</replaceable>
+        </arg>
+      </cmdsynopsis> <cmdsynopsis>
+        <command>evince</command>
+
+        <arg choice="plain">
+          <replaceable>primer.pdf</replaceable>
+        </arg>
+      </cmdsynopsis> <para>Документы должны выглядеть аналогично <link
+    href="http://csltex.googlepages.com/primer.pdf">эталонному файлу
+    результата</link>.</para></subsection>
+  </section>
+</article>

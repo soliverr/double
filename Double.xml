@@ -454,12 +454,16 @@
             Нужны теги для цели и задачи
     -->
     <programlisting language="ruby">
+        <![CDATA[
         File.read('Double.xml').match(/<programlisting language="ruby">(.*)<\/programlisting>/m)[0].scan(/<programlisting language="ruby">(.*?)<\/programlisting>/m){|w| print "#{w}\n" }
+        ]]>
     </programlisting>
     
 
     <programlisting language="ruby">
+        <![CDATA[
         File.read('Double.xml').gsub(/<\!--.*?-->/m,'').match(/<programlisting language="ruby">(.*)<\/programlisting>/m)[0].scan(/<programlisting language="ruby">(.*?)<\/programlisting>/m){|w| print "#{w}\n" }
+        ]]>
     </programlisting>
 
   </section>
