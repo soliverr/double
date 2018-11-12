@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article version="5.1" xmlns="http://docbook.org/ns/docbook"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xila="http://www.w3.org/2001/XInclude/local-attributes"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:trans="http://docbook.org/ns/transclusion"
+         xmlns:svg="http://www.w3.org/2000/svg"
+         xmlns:m="http://www.w3.org/1998/Math/MathML"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <title>Docker</title>
+
+    <author>
+      <personname><surname>Кряжевских</surname><firstname>Сергей</firstname></personname>
+
+      <email>&lt;soliverr@gmail.com&gt;</email>
+    </author>
+
+    <copyright>
+      <year>2018</year>
+
+      <holder>Public Domain</holder>
+    </copyright>
+
+    <edition>1.0</edition>
+
+    <pubdate>2018-11-12</pubdate>
+
+    <abstract xml:id="abstract">
+      <para>Работа с Docker</para>
+    </abstract>
+  </info>
+
+  <section xml:id="introduction">
+    <title>Введение</title>
+
+    <para><link xlink:href="https://www.docker.com/why-docker">Docker</link> -
+    это популярная система создания и управления <link
+    xlink:href="https://www.docker.com/resources/what-container">контейнерами</link>
+    для программного обеспечения. Здесь описана установка данного программного
+    обеспечения.</para>
+
+    <para>Docker поставляется в виде <link
+    xlink:href="https://docs.docker.com/install/overview/">двух
+    редакций</link>:</para>
+
+    <itemizedlist>
+      <listitem>
+        <para>Community Edition (CE)</para>
+      </listitem>
+
+      <listitem>
+        <para>Enterprise Edition (EE)</para>
+      </listitem>
+    </itemizedlist>
+
+    <para>Согласно <link
+    xlink:href="https://docs.docker.com/install/overview/">официальной
+    документации</link> для экспериментов и организации тестовой среды должна
+    подойти редакция <emphasis role="bold">Docker CE</emphasis>:</para>
+
+    <para><quote>Docker Community Edition (CE) is ideal for individual
+    developers and small teams looking to get started with Docker and
+    experimenting with container-based apps.</quote></para>
+
+    <para><quote>Docker Enterprise Edition (EE) is designed for enterprise
+    development and IT teams who build, ship, and run business critical
+    applications in production at scale.</quote></para>
+
+    <para>Как и в среде контейниризации LXD, в Docker необходимо подготовить
+    сетевой интерфейс для использования создаваемыми контейнерами.</para>
+  </section>
+
+  <section xml:id="Prepare_Network">
+    <title>Подготовка сетевого интерфейса</title>
+
+    <para>В системах контейнеризации для обеспечения локальной вычислительной
+    сети используют <link
+    xlink:href="https://en.wikipedia.org/wiki/Bridging_(networking)">сетевые
+    мосты</link>. Этот мост может быть локальным интерфейсом (lo) в основной
+    ОС, либо можно сконфигурировать сетевой интерфейс основной ОС в виде
+    сетевого моста.</para>
+
+    <para>Если создаётся сетевой мост в виде локального сетевого интерфейса
+    (lo), то доступ к контейнеру обеспечивается с помощью NAT. Обычно, это
+    называется публикацией сервиса в локальной вычислительной сети (intranet).
+    Так можно обеспечить доступ к определённому сервису, работающему в
+    контейнере, по определённому порту. При таком подходе необходимо где-то
+    запоминать какой порт основной ОС переназначен на данный порт данного
+    контейнера.</para>
+
+    <para>В условиях организации тестовой среды в intranet иногда бывает
+    удобно, что бы к котейнерам имелся полный доступ со стороны intranet. В
+    этом случае, необходимо сконфигурировать один из основных сетевых
+    интерфейсов основной ОС в качестве сетевого моста.</para>
+
+    <section xml:id="Ubuntu">
+      <title>Ubuntu</title>
+
+      <para>В Ubuntu может пригодится ПО для создания и управления сетевыми
+      мостами <emphasis>brctl</emphasis>:</para>
+
+      <para><literallayout>sudo apt -y install bridge-utils</literallayout></para>
+
+      <section xml:id="Netplan">
+        <title>Netplan</title>
+
+        <para>Настройка сетевых интерфейсов в Ubuntu с версии 17.10 стала
+        осуществляться с помощью <link
+        xlink:href="https://netplan.io">Netplan</link>.</para>
+
+        <itemizedlist>
+          <listitem>
+            <para><link xlink:href="https://netplan.io/examples">Примеры
+            конфигурирования</link></para>
+          </listitem>
+
+          <listitem>
+            <para><link
+            xlink:href="https://askubuntu.com/questions/971126/17-10-netplan-config-with-bridge">Как
+            настроить мост с помощью Netplan</link></para>
+          </listitem>
+        </itemizedlist>
+
+        <para>Для того, чтобы перенастроить один из основных сетевых
+        интерфейсов в качестве сетевого моста необходимо выполнить
+        следующее.</para>
+
+        <para>Получить список сетевых интерфейсов:</para>
+
+        <para><literallayout>ip link show</literallayout></para>
+
+        <warning>
+          <para>как определить физический интерфейс?</para>
+        </warning>
+
+        <para>Посмотреть список правил netplan:</para>
+
+        <para><literallayout>ls -1 /etc/netplan/*.yaml</literallayout></para>
+
+        <para>Создать правило для инициализации основного интерфейса в виде
+        сетевого моста:</para>
+
+        <para><literallayout>cat | sudo tee /etc/netplan/00-bridge.yaml
+
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    $IFACE_NAME:
+        dhcp4: false
+  bridges:
+    br0:
+        interfaces: [$IFACE_NAME]
+        macaddress: $IFACE_MAC
+        dhcp4: true
+        parameters:
+            stp: false
+            forward-delay: 0
+            </literallayout></para>
+
+        <para>Применить новую конфигурацию netplan:</para>
+
+        <para><literallayout>sudo netplan apply</literallayout></para>
+
+        <para>Контролировать появление сетевого моста в ОС</para>
+
+        <para><literallayout>ip link show type bridge</literallayout></para>
+      </section>
+    </section>
+  </section>
+</article>
