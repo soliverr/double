@@ -130,6 +130,16 @@
     <computeroutput>! Font T2A/cmr/m/n/10=larm1000 at 10.0pt not loadable:
     Metric (TFM) file not found.</computeroutput>
   </section>
+ 
+  <!--
+  Для работы pdflatex
+  cm-super
+
+/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+! pdfTeX error (font expansion): auto expansion is only possible with scalable
+fonts.
+
+  -->
 
   <section xml:id="installation_csl">
     <title>Установка пакета поддержки церковно-славянского языка в
@@ -313,4 +323,21 @@
     href="http://csltex.googlepages.com/primer.pdf">эталонному файлу
     результата</link>.</para></subsection>
   </section>
+    
+  <section xml:id="installation_vcs">
+    <title>Установка пакета создания создания резюме в LaTex</title>
+
+    <subsection>
+      <title>Установка пакета moderncv</title>
+
+      <!-- 
+         git clone https://github.com/xdanaux/moderncv или git@github.com:xdanaux/moderncv.git
+
+         sudo cp -r moderncv /usr/local/share/texmf
+         sudo texhash
+      -->
+
+    </subsection>
+  </section>
+
 </article>
