@@ -27,12 +27,12 @@
 
     <pubdate>2018-11-12</pubdate>
 
-    <abstract xml:id="abstract">
+    <abstract>
       <para>Работа с Docker</para>
     </abstract>
   </info>
 
-  <section xml:id="introduction">
+  <section>
     <title>Введение</title>
 
     <para><link xlink:href="https://www.docker.com/why-docker">Docker</link> -
@@ -72,7 +72,7 @@
     сетевой интерфейс для использования создаваемыми контейнерами.</para>
   </section>
 
-  <section xml:id="Prepare_Network">
+  <section xml:id="PrepareNetwork">
     <title>Подготовка сетевого интерфейса</title>
 
     <para>В системах контейнеризации для обеспечения локальной вычислительной
@@ -95,7 +95,7 @@
     этом случае, необходимо сконфигурировать один из основных сетевых
     интерфейсов основной ОС в качестве сетевого моста.</para>
 
-    <section xml:id="Ubuntu">
+    <section os="Ubuntu" xml:id="Prepare">
       <title>Ubuntu</title>
 
       <para>В Ubuntu может пригодится ПО для создания и управления сетевыми
@@ -127,22 +127,35 @@
         интерфейсов в качестве сетевого моста необходимо выполнить
         следующее.</para>
 
-        <para>Получить список сетевых интерфейсов:</para>
+        <procedure xml:id="CreateNetworkBridge">
+          <title>Настройка основного интерфейса в качестве моста</title>
 
-        <para><literallayout>ip link show</literallayout></para>
+          <step>
+            <title>Получить список сетевых интерфейсов</title>
 
-        <warning>
-          <para>как определить физический интерфейс?</para>
-        </warning>
+            <warning>
+              <para>как определить физический интерфейс?</para>
+            </warning>
 
-        <para>Посмотреть список правил netplan:</para>
+            <para><literallayout>ip link show</literallayout></para>
+          </step>
 
-        <para><literallayout>ls -1 /etc/netplan/*.yaml</literallayout></para>
+          <step>
+            <title>Посмотреть список правил netplan</title>
 
-        <para>Создать правило для инициализации основного интерфейса в виде
-        сетевого моста:</para>
+            <para><literallayout>ls -1 /etc/netplan/*.yaml</literallayout></para>
+          </step>
 
-        <para><literallayout>cat | sudo tee /etc/netplan/00-bridge.yaml
+          <step>
+            <title>Создать правило для инициализации основного интерфейса в
+            виде сетевого моста</title>
+
+            <warning>
+              <para>Необходимо установить переменные для имени физического
+              интерфейса и MAC-адреса данного интерфейса</para>
+            </warning>
+
+            <para><literallayout>cat | sudo tee /etc/netplan/00-bridge.yaml
 
 network:
   version: 2
@@ -159,14 +172,195 @@ network:
             stp: false
             forward-delay: 0
             </literallayout></para>
+          </step>
 
-        <para>Применить новую конфигурацию netplan:</para>
+          <step>
+            <title>Применить новую конфигурацию netplan</title>
 
-        <para><literallayout>sudo netplan apply</literallayout></para>
+            <para><literallayout>sudo netplan apply</literallayout></para>
+          </step>
 
-        <para>Контролировать появление сетевого моста в ОС</para>
+          <step>
+            <title>Контролировать появление сетевого моста в ОС</title>
 
-        <para><literallayout>ip link show type bridge</literallayout></para>
+            <para><literallayout>ip link show type bridge</literallayout></para>
+          </step>
+        </procedure>
+      </section>
+    </section>
+  </section>
+
+  <section xml:id="Installation_Docker_CE">
+    <title>Установка Docker CE</title>
+
+    <para>Согласно <link
+    xlink:href="https://docs.docker.com/get-started/">официальной
+    документации</link> Docker CE существует под следующие ОС:</para>
+
+    <warning>
+      <para>Как распарсить исходную страницу и получить список ОС?</para>
+    </warning>
+
+    <itemizedlist>
+      <listitem>
+        <para>Cloud</para>
+
+        <itemizedlist>
+          <listitem>
+            <para><link
+            xlink:href="https://docs.docker.com/docker-for-aws/">AWS</link></para>
+          </listitem>
+
+          <listitem>
+            <para><link
+            xlink:href="https://docs.docker.com/docker-for-azure/">Azure</link></para>
+          </listitem>
+        </itemizedlist>
+      </listitem>
+
+      <listitem>
+        <para>Linux</para>
+
+        <itemizedlist>
+          <listitem>
+            <para><link
+            xlink:href="https://docs.docker.com/install/linux/docker-ce/centos/">CentOS</link></para>
+          </listitem>
+
+          <listitem>
+            <para><link
+            xlink:href="https://docs.docker.com/install/linux/docker-ce/debian/">Debian</link></para>
+          </listitem>
+
+          <listitem>
+            <para><link
+            xlink:href="https://docs.docker.com/install/linux/docker-ce/fedora/">Fedora</link></para>
+          </listitem>
+
+          <listitem>
+            <para><link
+            xlink:href="https://docs.docker.com/install/linux/docker-ce/ubuntu/">Ubuntu</link></para>
+          </listitem>
+
+          <listitem>
+            <para><link
+            xlink:href="https://docs.docker.com/install/linux/docker-ce/binaries/">Install
+            Docker CE from binaries</link></para>
+          </listitem>
+        </itemizedlist>
+      </listitem>
+
+      <listitem>
+        <para><link
+        xlink:href="https://docs.docker.com/docker-for-mac/">MacOS</link></para>
+      </listitem>
+
+      <listitem>
+        <para><link
+        xlink:href="https://docs.docker.com/docker-for-windows/">Microsoft
+        Windows</link></para>
+      </listitem>
+    </itemizedlist>
+
+    <section os="Ubuntu">
+      <title>Установка Docker CE в Ubuntu</title>
+
+      <para><link
+      xlink:href="https://docs.docker.com/install/linux/docker-ce/ubuntu/#prerequisites">Поддерживаются</link>
+      64-битные версии следующих дситрибутивов:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>Bionic 18.04 (LTS)</para>
+        </listitem>
+
+        <listitem>
+          <para>Xenial 16.04 (LTS)</para>
+        </listitem>
+
+        <listitem>
+          <para>Trusty 14.04 (LTS)</para>
+        </listitem>
+      </itemizedlist>
+
+      <section>
+        <title>Подготовительные действия</title>
+
+        <procedure xml:id="RemoveOldDocker">
+          <title>Удалить старые версии пакетов</title>
+
+          <step>
+            <para><literallayout>sudo apt-get remove docker docker-engine docker.io</literallayout></para>
+          </step>
+        </procedure>
+
+        <procedure xml:id="InstallDockerRepository">
+          <title>Подключение репозитария пакетов Docker</title>
+
+          <step>
+            <title>Установить дополнительные пакеты для работы apt</title>
+
+            <para><literallayout>sudo apt install apt-transport-https ca-certificates curl software-properties-common</literallayout></para>
+          </step>
+
+          <step>
+            <title>Добавить официальный GPG-ключ репозитария</title>
+
+            <para><literallayout>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</literallayout></para>
+          </step>
+
+          <step>
+            <title>Добавить репозитарий Docker</title>
+
+            <para><literallayout>sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"              </literallayout></para>
+          </step>
+        </procedure>
+      </section>
+
+      <section>
+        <title>Проверить доступные версии Docker</title>
+
+        <para>ПО Docker в Ubuntu доступно в виде deb-пакетов и в виде
+        snap-пакетов. Можно проверить, в каком виде доступно более свежая
+        версия Docker CE.</para>
+
+        <procedure xml:id="CheckDockerVersion">
+          <step xml:id="CheckDockerVersionDeb">
+            <title>Получить текущую версию deb-пакета Docker</title>
+
+            <para><literallayout>apt show docker-ce</literallayout></para>
+          </step>
+
+          <step xml:id="CheckDockerVersionSnap">
+            <title>Получить текущую версию snap-пакета Docker</title>
+
+            <para><literallayout>snap search docker</literallayout></para>
+          </step>
+        </procedure>
+      </section>
+
+      <section>
+        <title>Установить Docker CE</title>
+
+        <procedure xml:id="InstallDockerCEfromRepo">
+          <title>Установка из репозитария пакетов</title>
+
+          <step>
+            <title>Установить Docker</title>
+
+            <para><literallayout>sudo apt-get update</literallayout><literallayout>sudo apt-get install docker-ce</literallayout></para>
+          </step>
+        </procedure>
+
+        <procedure xml:id="InstallDockerCEfromSnap">
+          <title>Установка из репозитария Snap</title>
+
+          <step>
+            <title>Установить Docker</title>
+
+            <para><literallayout>sudo snap install docker</literallayout></para>
+          </step>
+        </procedure>
       </section>
     </section>
   </section>
