@@ -34,7 +34,7 @@
     </abstract>
   </info>
 
-  <section xml:id="installation_base">
+  <section xml:id="installation_latex">
     <title>Установка базового программного обеспечения LaTeX</title>
 
     <para>Для дистрибутивов Ubuntu ОС Linux издательская среда LaTex доступна
@@ -52,12 +52,14 @@
 
     <cmdsynopsis>
       <command>sudo</command>
+    </cmdsynopsis>
 
+    <cmdsynopsis>
       <command>aptitude</command>
 
       <arg choice="req">install</arg>
 
-      <arg choice="plain">texlive-latex3</arg>
+      <arg choice="plain"><replaceable>texlive-latex3</replaceable></arg>
     </cmdsynopsis>
 
     <para>Поддержка набора текстов на национальных языках для LaTeX доступна в
@@ -69,28 +71,36 @@
 
       <arg choice="req">search</arg>
 
-      <arg choice="plain">texlive-lang</arg>
+      <arg choice="plain"><replaceable>texlive-lang</replaceable></arg>
     </cmdsynopsis>
 
     <para>Может быть получен следующий список пакетов:</para>
 
-    <computeroutput>p texlive-lang-african - TeX Live: African scripts p
-    texlive-lang-all - TeX Live: metapackage depending on all TeX Live
-    language packages v texlive-lang-all:i386 - p texlive-lang-arabic - TeX
-    Live: Arabic p texlive-lang-chinese - TeX Live: Chinese p texlive-lang-cjk
-    - TeX Live: Chinese/Japanese/Korean (base) p texlive-lang-cyrillic - TeX
-    Live: Cyrillic v texlive-lang-cyrillic:i386 - p texlive-lang-czechslovak -
-    TeX Live: Czech/Slovak v texlive-lang-czechslovak:i386 - p
-    texlive-lang-english - TeX Live: US and UK English v
-    texlive-lang-english:i386 - p texlive-lang-european - TeX Live: Other
-    European languages p texlive-lang-french - TeX Live: French p
-    texlive-lang-german - TeX Live: German p texlive-lang-greek - TeX Live:
-    Greek p texlive-lang-indic - TeX Live: Indic scripts p
-    texlive-lang-italian - TeX Live: Italian p texlive-lang-japanese - TeX
-    Live: Japanese p texlive-lang-korean - TeX Live: Korean p
-    texlive-lang-other - TeX Live: Other languages p texlive-lang-polish - TeX
-    Live: Polish p texlive-lang-portuguese - TeX Live: Portuguese p
-    texlive-lang-spanish - TeX Live: Spanish</computeroutput>
+    <para><literallayout><computeroutput>p texlive-lang-african - TeX Live: African scripts
+p texlive-lang-all - TeX Live: metapackage depending on all TeX Live language packages
+v texlive-lang-all:i386 - 
+p texlive-lang-arabic - TeX Live: Arabic 
+p texlive-lang-chinese - TeX Live: Chinese 
+p texlive-lang-cjk - TeX Live: Chinese/Japanese/Korean (base) 
+p texlive-lang-cyrillic - TeX Live: Cyrillic 
+v texlive-lang-cyrillic:i386 - 
+p texlive-lang-czechslovak - TeX Live: Czech/Slovak
+v texlive-lang-czechslovak:i386 -
+p texlive-lang-english - TeX Live: US and UK English
+v texlive-lang-english:i386 -
+p texlive-lang-european - TeX Live: Other European languages
+p texlive-lang-french - TeX Live: French
+p texlive-lang-german - TeX Live: German
+p texlive-lang-greek - TeX Live: Greek
+p texlive-lang-indic - TeX Live: Indic scripts
+p texlive-lang-italian - TeX Live: Italian
+p texlive-lang-japanese - TeX Live: Japanese
+p texlive-lang-korean - TeX Live: Korean
+p texlive-lang-other - TeX Live: Other languages
+p texlive-lang-polish - TeX Live: Polish
+p texlive-lang-portuguese - TeX Live: Portuguese
+p texlive-lang-spanish - TeX Live: Spanish
+</computeroutput></literallayout></para>
 
     <para>Можно установить все языковые пакеты LaTex
     <emphasis>texlive-lang-all</emphasis>, либо выбрать только необходимые. Я
@@ -98,14 +108,15 @@
 
     <cmdsynopsis>
       <command>sudo</command>
+    </cmdsynopsis>
 
+    <cmdsynopsis>
       <command>aptitude</command>
 
       <arg choice="req">install</arg>
 
-      <arg choice="plain">texlive-lang-english</arg>
-
-      <arg choice="plain">texlive-lang-cyrillic</arg>
+      <arg choice="plain"><replaceable>texlive-lang-english
+      texlive-lang-cyrillic</replaceable></arg>
     </cmdsynopsis>
 
     <para>Также, необходимо установить шрифты для работы с кириллическим
@@ -113,24 +124,26 @@
 
     <cmdsynopsis>
       <command>sudo</command>
+    </cmdsynopsis>
 
+    <cmdsynopsis>
       <command>aptitude</command>
 
       <arg choice="req">install</arg>
 
-      <arg choice="plain">texlive-fonts-extra</arg>
+      <arg choice="plain"><replaceable>texlive-fonts-extra</replaceable></arg>
     </cmdsynopsis>
 
     <para>В случае отсутствия требуемых шрифтов при вёрстке документа LaTeX
-    может генерировать вот такую ошибку (см. подсказку на <seealso>
-        <link
-        href="http://tex.stackexchange.com/questions/5088/what-is-wrong-with-cyrillic-package">StackExchange</link>
-      </seealso>):</para>
+    может генерировать вот такую ошибку (см. подсказку на <link
+    xlink:href="http://tex.stackexchange.com/questions/5088/what-is-wrong-with-cyrillic-package">StackExchange</link>
+    ):</para>
 
-    <computeroutput>! Font T2A/cmr/m/n/10=larm1000 at 10.0pt not loadable:
-    Metric (TFM) file not found.</computeroutput>
+    <para><literallayout><computeroutput>! Font T2A/cmr/m/n/10=larm1000 at 10.0pt not loadable:
+  Metric (TFM) file not found.</computeroutput>
+    </literallayout></para>
   </section>
- 
+
   <!--
   Для работы pdflatex
   cm-super
@@ -138,206 +151,271 @@
 /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 ! pdfTeX error (font expansion): auto expansion is only possible with scalable
 fonts.
-
   -->
 
-  <section xml:id="installation_csl">
+  <section xml:id="installation_latex_csl">
     <title>Установка пакета поддержки церковно-славянского языка в
     LaTeX</title>
 
-    <subsection>
-      <title>Установка пакета CSLTeX</title>
+    <para>Для набора церковно-славянских текстов в LaTeX существует пакет
+    <emphasis role="bold">CLSTex</emphasis>, который не включен в состав
+    официального архива <link xlink:href="https://www.ctan.org/">CTAN</link>,
+    но может быть достаточно легко установлен по процедуре, описанной в <link
+    xlink:href="http://csltex.googlepages.com/cslinstall.html">инструкции по
+    установке</link>.</para>
 
-      <para>Для работы с церковно-славянским языком разработан пакет <link
-      href="https://sites.google.com/site/csltex/">CSLTeX</link>. Пакет не
-      доступен в официальном архиве <link
-      href="https://www.ctan.org/">CTAN</link>, но может быть достаточно легко
-      установлен по процедуре, описанной в <link
-      href="http://csltex.googlepages.com/cslinstall.html">инструкции по
-      установке</link>.</para>
+    <procedure>
+      <title>Установка пакета CSLTeX</title>
 
       <para>Здесь я приведу свой способ установки пакета CSLTeX.</para>
 
-      <para>Необходимо скачать <link
-      href="http://csltex.googlepages.com/csltex-public.zip">файл дистрибутива
-      CSLTeX</link>:</para>
+      <step>
+        <title>Скачать дистрибутив пакета CLSTeX</title>
 
-      <cmdsynopsis>
-        <command>wget</command>
+        <para>Необходимо скачать <link
+        xlink:href="http://csltex.googlepages.com/csltex-public.zip">файл
+        дистрибутива CSLTeX</link>:</para>
 
-        <arg
-        choice="plain">http://csltex.googlepages.com/csltex-public.zip</arg>
-      </cmdsynopsis>
+        <cmdsynopsis>
+          <command>wget</command>
 
-      <para>Пакет можно установить только для конкретного пользователя ОС
-      Linux, либо сделать его общедоступным. Я устанавливаю пакет в
-      общедоступный локальный каталог пакетов LaTeX
-      <varname>TEXMF-LOCAL</varname>. Получить имя каталога в системе можно,
-      запросив у LaTeX значение переменной
-      <varname>TEXMFLOCAL</varname>:</para>
+          <arg
+          choice="plain"><replaceable>http://csltex.googlepages.com/csltex-public.zip</replaceable></arg>
+        </cmdsynopsis>
+      </step>
 
-      <cmdsynopsis>
-        <command>kpsewich</command>
+      <step>
+        <title>Установка пакета CLSTeX</title>
 
-        <arg choice="plain">-expand-var '$TEXMFLOCAL'</arg>
-      </cmdsynopsis>
+        <para>Пакет можно установить только для конкретного пользователя ОС
+        Linux, либо сделать его общедоступным. Я устанавливаю пакет в
+        общедоступный локальный каталог пакетов LaTeX
+        <varname>TEXMF-LOCAL</varname>. Получить имя каталога в системе можно,
+        запросив у LaTeX значение переменной
+        <varname>TEXMFLOCAL</varname>:</para>
 
-      <para>Результат выполнения этой команды может быть следующим:</para>
+        <cmdsynopsis>
+          <command>kpsewich</command>
 
-      <computeroutput>/usr/local/share/texmf</computeroutput>
+          <arg choice="plain">-expand-var '$TEXMFLOCAL'</arg>
+        </cmdsynopsis>
 
-      <para>Необходимо распактовать дистрибутив CSLTeX в этот каталог:</para>
+        <para>Результат выполнения этой команды может быть следующим:
+        <computeroutput>/usr/local/share/texmf</computeroutput></para>
 
-      <cmdsynopsis>
-        <command>sudo</command>
+        <para>Необходимо распактовать дистрибутив CSLTeX в этот
+        каталог:</para>
 
-        <command>unzip</command>
+        <cmdsynopsis>
+          <command>sudo</command>
+        </cmdsynopsis>
 
-        <arg choice="plain">-d <replaceable>texmflocaldir</replaceable></arg>
+        <cmdsynopsis>
+          <command>unzip</command>
 
-        <arg choice="plain">csltex-public.zip</arg>
-      </cmdsynopsis>
+          <arg choice="plain">-d
+          <replaceable>texmflocaldir</replaceable></arg>
 
-      <para>Обновляем список поиска пакетов LaTeX:</para>
+          <arg choice="plain">csltex-public.zip</arg>
+        </cmdsynopsis>
+      </step>
 
-      <cmdsynopsis>
-        <command>sudo</command>
+      <step>
+        <title>Обновить список пакетов LaTeX</title>
 
-        <command>texhash</command>
-      </cmdsynopsis>
+        <cmdsynopsis>
+          <command>sudo</command>
+        </cmdsynopsis>
 
-      <para>Добавляем список шрифтов пакета CSLTeX в списки поиска шрифтов
-      LaTeX:</para>
+        <cmdsynopsis>
+          <command>texhash</command>
+        </cmdsynopsis>
+      </step>
 
-      <cmdsynopsis>
-        <command>sudo</command>
+      <step>
+        <title>Добавить список шрифтов пакета CSLTeX в списки поиска шрифтов
+        LaTeX</title>
 
-        <command>updmap-sys</command>
+        <substeps>
+          <step>
+            <title>Системный список шрифтов</title>
 
-        <arg choice="req">--enable Map&gt;</arg>
+            <cmdsynopsis>
+              <command>sudo</command>
+            </cmdsynopsis>
 
-        <arg choice="plain">cslav.map</arg>
-      </cmdsynopsis>
+            <cmdsynopsis>
+              <command>updmap-sys</command>
 
-      <cmdsynopsis>
-        <command>sudo</command>
+              <arg choice="req">--enable Map</arg>
 
-        <command>updmap</command>
-      </cmdsynopsis>
+              <arg choice="plain">cslav.map</arg>
+            </cmdsynopsis>
+          </step>
 
-      <cmdsynopsis>
-        <command>updmap</command>
-      </cmdsynopsis>
+          <step>
+            <title>Общедоступный список шрифтов</title>
 
-      <para>Если этого не сделать, то LaTeX не сможет найти шрифты при выводе
-      изображения текста и может сгенерировать следующую ошибку:</para>
+            <!-- Надо или нет это выполнять для пользователя root? -->
 
-      <computeroutput>kpathsea: Running mktexpk --mfmode / --bdpi 600 --mag
-      1+300/600 --dpi 900 stuscslt mktexpk: don't know how to create bitmap
-      font for stuscslt. mktexpk: perhaps stuscslt is missing from the map
-      file. kpathsea: Appending font creation commands to
-      missfont.log.</computeroutput>
-    </subsection>
+            <cmdsynopsis>
+              <command>sudo</command>
+            </cmdsynopsis>
 
-    <subsection><title>Проверка работоспособности пакета CSLTeX</title>
-    <para>Для праверки работоспособности пакета CSLTeX можно воспользоваться
-    <link href="http://csltex.googlepages.com/primer.html">файлом
-    примера</link>. Скачайте исходный файл:</para> <cmdsynopsis>
-        <command>wget</command>
+            <cmdsynopsis>
+              <command>updmap</command>
+            </cmdsynopsis>
+          </step>
 
-        <arg choice="req">-O -&gt;</arg>
+          <step>
+            <title>Пользовательский список шрифтов</title>
 
-        <arg choice="plain">http://csltex.googlepages.com/primer.html</arg>
+            <cmdsynopsis>
+              <command>updmap</command>
+            </cmdsynopsis>
+          </step>
+        </substeps>
 
-        <command>|</command>
+        <para>Если этого не сделать, то LaTeX не сможет найти шрифты при
+        выводе изображения текста и может сгенерировать следующую
+        ошибку:</para>
 
-        <command>sed</command>
+        <para><literallayout><computeroutput>kpathsea: Running mktexpk --mfmode / --bdpi 600 --mag 1+300/600 --dpi 900 stuscslt
+mktexpk: don't know how to create bitmap font for stuscslt. 
+mktexpk: perhaps stuscslt is missing from the map file.
+kpathsea: Appending font creation commands to missfont.log.</computeroutput></literallayout></para>
+      </step>
+    </procedure>
 
-        <arg choice="plain">-e 's#&lt;pre&gt;##'</arg>
+    <procedure>
+      <title>Проверка работоспособности пакета CSLTeX</title>
 
-        <arg choice="plain">-e 's#&lt;/pre&gt;##'</arg>
+      <para>Для праверки работоспособности пакета CSLTeX можно воспользоваться
+      <link xlink:href="http://csltex.googlepages.com/primer.html">файлом
+      примера</link>.</para>
 
-        <command>&gt;</command>
+      <step>
+        <title>Скачайте исходный файл</title>
 
-        <arg choice="plain">
-          <replaceable>primer.tex</replaceable>
-        </arg>
-      </cmdsynopsis> <para>Исходный файл представлен в кодировке <emphasis
-    role="strong">KOI8-R</emphasis>, поэтому его можно перекодировать в
-    кодировку <emphasis role="strong">UTF-8</emphasis> командой:</para>
-    <cmdsynopsis>
-        <command>iconv</command>
+        <cmdsynopsis>
+          <command>wget</command>
 
-        <arg choice="req">-f koi8-r</arg>
+          <arg choice="req">-O</arg>
 
-        <command>&lt;</command>
+          <arg
+          choice="plain"><replaceable>http://csltex.googlepages.com/primer.html</replaceable></arg>
 
-        <arg choice="plain">
-          <replaceable>primer.tex</replaceable>
-        </arg>
+          <command>|</command>
 
-        <command>&gt;</command>
+          <command>sed</command>
 
-        <arg choice="plain">
-          <replaceable>primer_u.tex</replaceable>
-        </arg>
-      </cmdsynopsis> <para>Без ошибок должны отработать команды вёрстки
-    примера в LaTeX и PDFLaTex:</para> load './Double.rb' <cmdsynopsis>
-        <command>latex</command>
+          <arg choice="plain">-e 's#&lt;pre&gt;##'</arg>
 
-        <arg choice="plain">
-          <replaceable>primer.tex</replaceable>
-        </arg>
-      </cmdsynopsis> <cmdsynopsis>
-        <command>pdflatex</command>
+          <arg choice="plain">-e 's#&lt;/pre&gt;##'</arg>
 
-        <arg choice="plain">
-          <replaceable>primer.tex</replaceable>
-        </arg>
-      </cmdsynopsis> <para>Или:</para> <cmdsynopsis>
-        <command>latex</command>
+          <command>&gt;</command>
 
-        <arg choice="plain">
-          <replaceable>primer_u.tex</replaceable>
-        </arg>
-      </cmdsynopsis> <cmdsynopsis>
-        <command>pdflatex</command>
+          <arg choice="plain"><replaceable>primer.tex</replaceable></arg>
+        </cmdsynopsis>
+      </step>
 
-        <arg choice="plain">
-          <replaceable>primer_u.tex</replaceable>
-        </arg>
-      </cmdsynopsis> <para>При открытии полученные свёрстанные документы
-    должны отображаться без ошибок:</para> <cmdsynopsis>
-        <command>xdvi</command>
+      <step>
+        <title>Измените при необходимости кодировку исходного файла</title>
 
-        <arg choice="plain">
-          <replaceable>primer.dvi</replaceable>
-        </arg>
-      </cmdsynopsis> <cmdsynopsis>
-        <command>evince</command>
+        <para>Исходный файл представлен в кодировке <emphasis
+        role="strong">KOI8-R</emphasis>, поэтому его можно перекодировать в
+        кодировку <emphasis role="strong">UTF-8</emphasis> командой:</para>
 
-        <arg choice="plain">
-          <replaceable>primer.pdf</replaceable>
-        </arg>
-      </cmdsynopsis> <para>Документы должны выглядеть аналогично <link
-    href="http://csltex.googlepages.com/primer.pdf">эталонному файлу
-    результата</link>.</para></subsection>
+        <cmdsynopsis>
+          <command>iconv</command>
+
+          <arg choice="req">-f koi8-r</arg>
+
+          <command>&lt;</command>
+
+          <arg choice="plain"><replaceable>primer.tex</replaceable></arg>
+
+          <command>&gt;</command>
+
+          <arg choice="plain"><replaceable>primer_u.tex</replaceable></arg>
+        </cmdsynopsis>
+      </step>
+
+      <step>
+        <title>Сверстайте файл примера</title>
+
+        <para>Без ошибок должны отработать команды вёрстки примера в LaTeX и
+        PDFLaTex. В качестве входного файла можно указать как
+        <emphasis>primer.tex</emphasis> так и
+        <emphasis>primer_u.tex</emphasis>.</para>
+
+        <substeps>
+          <step>
+            <title>Вёрстка в LaTeX</title>
+
+            <cmdsynopsis>
+              <command>latex</command>
+
+              <arg choice="plain"><replaceable>primer.tex</replaceable></arg>
+            </cmdsynopsis>
+          </step>
+
+          <step>
+            <title>Вёрстка в PDFLaTex</title>
+
+            <cmdsynopsis>
+              <command>pdflatex</command>
+
+              <arg choice="plain"><replaceable>primer.tex</replaceable></arg>
+            </cmdsynopsis>
+          </step>
+        </substeps>
+      </step>
+
+      <step>
+        <title>Проверьте результат вёрстки</title>
+
+        <para>При открытии полученные свёрстанные документы должны
+        отображаться без ошибок</para>
+
+        <cmdsynopsis>
+          <command>xdvi</command>
+
+          <arg choice="plain"><replaceable>primer.dvi</replaceable></arg>
+        </cmdsynopsis>
+
+        <cmdsynopsis>
+          <command>evince</command>
+
+          <arg choice="plain"><replaceable>primer.pdf</replaceable></arg>
+        </cmdsynopsis>
+
+        <para>Документы должны выглядеть аналогично <link
+        xlink:href="http://csltex.googlepages.com/primer.pdf">эталонному файлу
+        результата</link>.</para>
+      </step>
+    </procedure>
   </section>
-    
-  <section xml:id="installation_vcs">
+
+  <section xml:id="installation_latex_moderncv">
     <title>Установка пакета создания создания резюме в LaTex</title>
 
-    <subsection>
+    <procedure>
       <title>Установка пакета moderncv</title>
 
-      <!-- 
+      <step>
+        <title>Получение исходного кода пакета</title>
+
+        <para/>
+
+        <!--
+
          git clone https://github.com/xdanaux/moderncv или git@github.com:xdanaux/moderncv.git
 
          sudo cp -r moderncv /usr/local/share/texmf
          sudo texhash
-      -->
-
-    </subsection>
+-->
+      </step>
+    </procedure>
   </section>
-
 </article>

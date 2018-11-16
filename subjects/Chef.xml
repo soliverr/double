@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article version="5.1" xmlns="http://docbook.org/ns/docbook"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xila="http://www.w3.org/2001/XInclude/local-attributes"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:trans="http://docbook.org/ns/transclusion"
+         xmlns:svg="http://www.w3.org/2000/svg"
+         xmlns:m="http://www.w3.org/1998/Math/MathML"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <title>Chef</title>
+
+    <author>
+      <personname><surname>Кряжевских</surname><firstname>Сергей</firstname></personname>
+
+      <affiliation>
+        <orgname/>
+      </affiliation>
+    </author>
+
+    <pubdate>2018-11-12</pubdate>
+
+    <abstract>
+      <para>Система автоматизации развёртывания вычислительной инфраструктуры
+      Chef</para>
+    </abstract>
+  </info>
+
+  <section>
+    <title>Введение</title>
+
+    <para><link xlink:href="https://chef.io">Chef</link> - это одна из систем
+    автоматизации развёртывания вычислительной инфраструктуры DevOps</para>
+  </section>
+
+  <section>
+    <title>Установка сервера Chef</title>
+
+    <para>Процесс установки сервера Chef описан в <link
+    xlink:href="https://docs.chef.io/install_server.html">официальной
+    документации</link>.</para>
+
+    <procedure>
+      <title>Установка сервера Chef на Ubuntu</title>
+
+      <step>
+        <title>Скачать пакет с <link
+        xlink:href="https://downloads.chef.io/chef-server/">сайта</link></title>
+
+        <para><literallayout>curl -fsSL https://packages.chef.io/files/stable/chef-server/12.18.14/ubuntu/18.04/chef-server-core_12.18.14-1_amd64.deb</literallayout></para>
+      </step>
+
+      <step>
+        <title>Установить пакет в ОС</title>
+
+        <para><literallayout>sudo dpkg -i chef-server-core_12.18.14-1_amd64.deb</literallayout></para>
+      </step>
+    </procedure>
+  </section>
+
+  <section>
+    <title>Конфигурирование сервера Chef</title>
+
+    <procedure>
+      <title>Первичная конфигурация сервера</title>
+
+      <step>
+        <title>Сконфигурировать сервисы Chef</title>
+
+        <para><literallayout>chef-server-ctl reconfigure</literallayout></para>
+      </step>
+
+      <step>
+        <title>Создать администратора Chef</title>
+
+        <para><literallayout>chef-server-ctl user-create USER_NAME FIRST_NAME LAST_NAME EMAIL 'PASSWORD' --filename FILE_NAME</literallayout></para>
+      </step>
+
+      <step>
+        <title>Создать организацию</title>
+
+        <para><literallayout>chef-server-ctl org-create short_name 'full_organization_name' --association_user user_name --filename ORGANIZATION-validator.pem</literallayout></para>
+      </step>
+    </procedure>
+  </section>
+</article>

@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article version="5.1" xmlns="http://docbook.org/ns/docbook"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xila="http://www.w3.org/2001/XInclude/local-attributes"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:trans="http://docbook.org/ns/transclusion"
+         xmlns:svg="http://www.w3.org/2000/svg"
+         xmlns:m="http://www.w3.org/1998/Math/MathML"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <title>LXD</title>
+
+    <author>
+      <personname><surname>Кряжевских</surname><firstname>Сергей</firstname></personname>
+
+      <email>&lt;soliverr@gmail.com&gt;</email>
+    </author>
+
+    <copyright>
+      <year>2018</year>
+
+      <holder>Public Domain</holder>
+    </copyright>
+
+    <edition>1.0</edition>
+
+    <pubdate>2018-11-12</pubdate>
+
+    <abstract>
+      <para>Работа с контенерами в LXD</para>
+    </abstract>
+  </info>
+
+  <section>
+    <title>Введение</title>
+
+    <para><link
+    xlink:href="https://linuxcontainers.org/lxd/introduction/">LXD</link> -
+    это система создания и управления контейнерами для ОС Linux.</para>
+
+    <para>LXD входит в состав многих дистрибутивов Linux и может быть <link
+    xlink:href="https://linuxcontainers.org/lxd/getting-started-cli/">легко
+    установлен</link> из пакетов соответсвующего дистрибутива.</para>
+  </section>
+
+  <section xml:id="PrepareNetwork">
+    <title>Подготовка сетевого интерфейса</title>
+
+    <para>Как и в среде контейниризации Docker, в LXD <olink
+    targetdoc="Docker" targetptr="PrepareNetwork">необходимо подготовить
+    сетевой интерфейс</olink> для использования создаваемыми
+    контейнерами.</para>
+  </section>
+
+  <section xml:id="Installation_LXD">
+    <title>Установка LXD</title>
+
+    <section os="Ubuntu">
+      <title>Установка LXD в Ubuntu</title>
+
+      <section>
+        <title>Проверить доступные версии LXD</title>
+
+        <para>ПО LXD в Ubuntu доступно в виде deb-пакетов и в виде
+        snap-пакетов. Можно проверить, в каком виде доступно более свежая
+        версия LXD.</para>
+
+        <procedure xml:id="CheckLXDVersion">
+          <step xml:id="CheckLXDVersionDeb">
+            <title>Получить текущую версию deb-пакета LXD</title>
+
+            <cmdsynopsis>
+              <command>apt</command>
+
+              <arg choice="req">search</arg>
+
+              <arg choice="plain">'\blxd\b'</arg>
+            </cmdsynopsis>
+          </step>
+
+          <step xml:id="CheckLXDVersionSnap">
+            <title>Получить текущую версию snap-пакета LXD</title>
+
+            <cmdsynopsis>
+              <command>snap</command>
+
+              <arg choice="req">search</arg>
+
+              <arg choice="plain">lxd</arg>
+            </cmdsynopsis>
+          </step>
+        </procedure>
+      </section>
+
+      <section>
+        <title>Установить LXD</title>
+
+        <para>Установить ПО LXD можно одновременно как из репозитария пакетов
+        Ubuntu, так и из snap-репозитария. Свежие сборки ПО LXD доступны в
+        виде snap-пакетов. Вот <link
+        xlink:href="https://discuss.linuxcontainers.org/t/migrate-from-ppa-to-snap/816">тут</link>
+        об этом упоминается.</para>
+
+        <procedure xml:id="InstallLXDfromRepo">
+          <title>Установка из репозитария пакетов</title>
+
+          <step>
+            <title>Обновить кеш пакетов</title>
+
+            <cmdsynopsis>
+              <command>sudo</command>
+            </cmdsynopsis>
+
+            <cmdsynopsis>
+              <command>apt</command>
+
+              <arg choice="req">update</arg>
+            </cmdsynopsis>
+          </step>
+
+          <step>
+            <title>Установить ПО LXD</title>
+
+            <cmdsynopsis>
+              <command>sudo</command>
+            </cmdsynopsis>
+
+            <cmdsynopsis>
+              <command>apt</command>
+
+              <arg choice="req">install</arg>
+
+              <arg choice="plain"><replaceable>lxd lxd-client
+              lxd-tools</replaceable></arg>
+            </cmdsynopsis>
+          </step>
+        </procedure>
+
+        <procedure xml:id="InstallLXDfromSnap">
+          <title>Установка из репозитария Snap</title>
+
+          <step>
+            <title>Установить ПО LXD</title>
+
+            <cmdsynopsis>
+              <command>sudo</command>
+            </cmdsynopsis>
+
+            <cmdsynopsis>
+              <command>snap</command>
+
+              <arg choice="req">install</arg>
+
+              <arg choice="plain"><replaceable>lxd</replaceable></arg>
+            </cmdsynopsis>
+          </step>
+        </procedure>
+      </section>
+    </section>
+  </section>
+
+  <section>
+    <title>Настройка LXD</title>
+
+    <para>Для начала работы с LXD необходимо его инициализировать. В процессе
+    инициализации создаются профили работы LXD-сервиса: сетевые интерфейсы,
+    хранилища данных; определяется режим работы LXD-сервиса в локальной
+    вычислительной сети.</para>
+
+    <para>В интернете можно найти множество статей по началу работы с LXD.
+    Основными источниками информации являются следующие:<itemizedlist>
+        <listitem>
+          <para><link
+          xlink:href="https://linuxcontainers.org/lxd/getting-started-cli/">Официальный
+          сайт проекта LXD</link></para>
+        </listitem>
+
+        <listitem>
+          <para><link xlink:href="https://stgraber.org/">Блог ведущего
+          разработчика</link></para>
+        </listitem>
+
+        <listitem>
+          <para><link
+          xlink:href="https://lxd.readthedocs.io/en/latest/">Текущая
+          документация проекта</link></para>
+        </listitem>
+      </itemizedlist></para>
+
+    <para>Далее приводится процедура инициализации сервиса LXD вне зависимости
+    от дистрибутива ОС Linux.</para>
+
+    <important>
+      <para>Пользователь должен быть добавлен в группу
+      <emphasis>lxd</emphasis>.</para>
+    </important>
+
+    <note>
+      <para>Вы также можете установить и сконфирурировать дополнительное ПО
+      для создания пулов для контейнеров LXD.</para>
+    </note>
+
+    <procedure xml:id="InitLXD">
+      <title>Инициализация LXD</title>
+
+      <step>
+        <title>Интерактивная инициализация LXD</title>
+
+        <cmdsynopsis>
+          <command>lxd</command>
+
+          <arg choice="req">init</arg>
+        </cmdsynopsis>
+
+        <para>В консольном интерактивном режиме будут заданы несколько
+        вопросов по настройке сервиса LXD:</para>
+
+        <substeps>
+          <step>
+            <title>Would you like to use LXD clustering? (yes/no)
+            [default=no]:</title>
+
+            <para>С какой-то версии (<emphasis>видимо с 3.0</emphasis>) LXD
+            стал поддерживать кластерную работу на нескольких рабочих
+            станциях. Режим кластеризации описан <link
+            xlink:href="https://lxd.readthedocs.io/en/latest/clustering/">в
+            официальной документации</link>. При работе в кластерном режиме
+            контейнеры могут быть запущены с любого узла кластера на любом
+            другом узле кластера.</para>
+
+            <tip>
+              <para>Ответ: yes</para>
+            </tip>
+          </step>
+
+          <step>
+            <title>What name should be used to identify this node in the
+            cluster? [default=xxxxxxx]:</title>
+
+            <para>Это имя узла в кластере. Удобно использовать DNS-имена
+            хостов в локальной вычислительной сети.</para>
+          </step>
+
+          <step>
+            <title>What IP address or DNS name should be used to reach this
+            node? [default=xx.xx.xx.xx]:</title>
+
+            <para>Здесь необходимо ввести IP-адрес или DNS-имя, с помощью
+            которого узлы кластера смогут подключаться в данный кластер. То
+            есть, это имя или адрес <emphasis role="bold">ведущего
+            узла</emphasis> кластера LXD.</para>
+          </step>
+
+          <step>
+            <title>Are you joining an existing cluster? (yes/no)
+            [default=no]:</title>
+
+            <para>Здесь спрашивается о существовании кластера.</para>
+          </step>
+
+          <step>
+            <title>Setup password authentication on the cluster? (yes/no)
+            [default=yes]:</title>
+
+            <para>Будет ли использоваться пароль для входа в кластер.</para>
+
+            <tip>
+              <para>Ответ: yes</para>
+            </tip>
+          </step>
+
+          <step>
+            <title>Trust password for new clients:</title>
+
+            <para>Необходимо указать пароль для подключения новых
+            клиентов.</para>
+          </step>
+
+          <step>
+            <title>Do you want to configure a new local storage pool? (yes/no)
+            [default=yes]:</title>
+
+            <para>Необходимо сконфигурировать пул для создания файловых систем
+            контейнеров.</para>
+
+            <tip>
+              <para>Ответ: yes</para>
+            </tip>
+          </step>
+
+          <step>
+            <title>Name of the storage backend to use (btrfs, dir, lvm, zfs)
+            [default=zfs]:</title>
+
+            <para>Тип системы управления пулами.</para>
+
+            <tip>
+              <para>Ответ: dir. Контейннеры в существующей файловой
+              системе.</para>
+            </tip>
+          </step>
+
+          <step>
+            <title>Do you want to configure a new remote storage pool?
+            (yes/no) [default=no]:</title>
+
+            <para>Оказывается можно организовать удалённый пул для
+            контейнеров.</para>
+          </step>
+
+          <step>
+            <title>Would you like to connect to a MAAS server? (yes/no)
+            [default=no]:</title>
+
+            <para>Оказывается можно подключиться к MAAS-серверу.</para>
+          </step>
+
+          <step>
+            <title>Would you like to configure LXD to use an existing bridge
+            or host interface? (yes/no) [default=no]:</title>
+
+            <para>Это вопрос об использовании говтого основного
+            интерфейса.</para>
+          </step>
+
+          <step>
+            <title>Would you like to create a new Fan overlay network?
+            (yes/no) [default=yes]:</title>
+
+            <para>Что это???</para>
+          </step>
+
+          <step>
+            <title>Would you like stale cached images to be updated
+            automatically? (yes/no) [default=yes]</title>
+
+            <para>Обновлять автоматически или не обновлять скачанные образы
+            контейнеров.</para>
+          </step>
+
+          <step>
+            <title>Would you like a YAML "lxd init" preseed to be printed?
+            (yes/no) [default=no]:</title>
+
+            <para>Вывести на экран созданную конфигурацию сервиса LXD.</para>
+          </step>
+        </substeps>
+      </step>
+    </procedure>
+  </section>
+</article>
