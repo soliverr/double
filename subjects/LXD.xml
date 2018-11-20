@@ -229,52 +229,53 @@
             контейнеры могут быть запущены с любого узла кластера на любом
             другом узле кластера.</para>
 
-            <tip>
-              <para>Ответ: yes</para>
-            </tip>
-          </step>
+            <substeps>
+              <step>
+                <title>What name should be used to identify this node in the
+                cluster? [default=xxxxxxx]:</title>
 
-          <step>
-            <title>What name should be used to identify this node in the
-            cluster? [default=xxxxxxx]:</title>
+                <!-- Ветка для ответа yes -->
 
-            <para>Это имя узла в кластере. Удобно использовать DNS-имена
-            хостов в локальной вычислительной сети.</para>
-          </step>
+                <para>Это имя узла в кластере. Удобно использовать DNS-имена
+                хостов в локальной вычислительной сети.</para>
+              </step>
 
-          <step>
-            <title>What IP address or DNS name should be used to reach this
-            node? [default=xx.xx.xx.xx]:</title>
+              <step>
+                <title>What IP address or DNS name should be used to reach
+                this node? [default=xx.xx.xx.xx]:</title>
 
-            <para>Здесь необходимо ввести IP-адрес или DNS-имя, с помощью
-            которого узлы кластера смогут подключаться в данный кластер. То
-            есть, это имя или адрес <emphasis role="bold">ведущего
-            узла</emphasis> кластера LXD.</para>
-          </step>
+                <para>Здесь необходимо ввести IP-адрес или DNS-имя, с помощью
+                которого узлы кластера смогут подключаться в данный кластер.
+                То есть, это имя или адрес <emphasis role="bold">ведущего
+                узла</emphasis> кластера LXD.</para>
+              </step>
 
-          <step>
-            <title>Are you joining an existing cluster? (yes/no)
-            [default=no]:</title>
+              <step>
+                <title>Are you joining an existing cluster? (yes/no)
+                [default=no]:</title>
 
-            <para>Здесь спрашивается о существовании кластера.</para>
-          </step>
+                <para>Здесь спрашивается о существовании кластера.</para>
+              </step>
 
-          <step>
-            <title>Setup password authentication on the cluster? (yes/no)
-            [default=yes]:</title>
+              <step>
+                <title>Setup password authentication on the cluster? (yes/no)
+                [default=yes]:</title>
 
-            <para>Будет ли использоваться пароль для входа в кластер.</para>
+                <para>Будет ли использоваться пароль для входа в
+                кластер.</para>
 
-            <tip>
-              <para>Ответ: yes</para>
-            </tip>
-          </step>
+                <tip>
+                  <para>Ответ: yes</para>
+                </tip>
+              </step>
 
-          <step>
-            <title>Trust password for new clients:</title>
+              <step>
+                <title>Trust password for new clients:</title>
 
-            <para>Необходимо указать пароль для подключения новых
-            клиентов.</para>
+                <para>Необходимо указать пароль для подключения новых
+                клиентов.</para>
+              </step>
+            </substeps>
           </step>
 
           <step>
@@ -329,6 +330,24 @@
             (yes/no) [default=yes]:</title>
 
             <para>Что это???</para>
+
+            <note>
+              <para>Создались следующие сетевые интерфейсы:</para>
+
+              <itemizedlist>
+                <listitem>
+                  <para>lxdfan0: мост на lxdfan0-mtu lxdfan0-fan</para>
+                </listitem>
+
+                <listitem>
+                  <para>lxdfan0-mtu</para>
+                </listitem>
+
+                <listitem>
+                  <para>lxdfan0-fan</para>
+                </listitem>
+              </itemizedlist>
+            </note>
           </step>
 
           <step>

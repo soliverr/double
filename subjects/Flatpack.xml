@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article version="5.1" xmlns="http://docbook.org/ns/docbook"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xila="http://www.w3.org/2001/XInclude/local-attributes"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:trans="http://docbook.org/ns/transclusion"
+         xmlns:svg="http://www.w3.org/2000/svg"
+         xmlns:m="http://www.w3.org/1998/Math/MathML"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <title>Flatpack</title>
+
+    <author>
+      <personname><surname>Кряжевских</surname><firstname>Сергей</firstname></personname>
+
+      <affiliation>
+        <orgname/>
+      </affiliation>
+    </author>
+
+    <pubdate>2018-11-19</pubdate>
+
+    <abstract>
+      <para>Создание и распространение десктопных приложений для Linux</para>
+    </abstract>
+  </info>
+
+  <section>
+    <title>Введение</title>
+
+    <para><link xlink:href="https://flatpack.org">Flatpack</link>
+    позиционируется создателями как система следующего поколения для создания
+    и распространения десктопных приложений для Linux.</para>
+
+    <para>Как и SNAP, Flatpack создаёт контейнеры приложений длядальнейшего
+    распространения и установки на целевых системах. Контейнеры приложений
+    <emphasis>не зависят</emphasis> от целевого дистрибутива Linux.</para>
+  </section>
+
+  <section>
+    <title>Установка Flatpack</title>
+
+    <para>Установка Flatpack на различных дистрибутивах Linux описана в<link
+    xlink:href="https://flatpak.org/setup/">официальном
+    руководстве</link>.</para>
+
+    <warning>
+      <para>Можно автоматически найти страницу описания установки в целевом
+      дистрибутиве и далее динамически сформировать список дистрибутивов и
+      список действий по установке.</para>
+    </warning>
+  </section>
+</article>
