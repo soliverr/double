@@ -19,7 +19,7 @@
     </authorgroup>
 
     <copyright>
-      <year>2016</year>
+      <year>2016-2018</year>
 
       <holder>Public Domain</holder>
     </copyright>
@@ -43,40 +43,67 @@
     xlink:href="http://www.tug.org/texlive/">Tex Live</link>. Он включён во
     все основные дистрибутивы ОС Linux.</para>
 
-    <para>В Ubuntu 16.04 "Xenial" уже доступен <link
-    xlink:href="https://www.latex-project.org/latex3/">LaTex версии
-    3</link>.</para>
+    <section>
+      <title>Ubuntu 16.04 "Xenial"</title>
 
-    <para>Для установки издательской системы LaTeX необходимо выполнить
-    команду:</para>
+      <para>В Ubuntu 16.04 "Xenial" уже доступен <link
+      xlink:href="https://www.latex-project.org/latex3/">LaTex версии
+      3</link>.</para>
 
-    <cmdsynopsis>
-      <command>sudo</command>
-    </cmdsynopsis>
+      <para>Для установки издательской системы LaTeX необходимо выполнить
+      команду:</para>
 
-    <cmdsynopsis>
-      <command>aptitude</command>
+      <cmdsynopsis>
+        <command>sudo aptitude</command>
 
-      <arg choice="req">install</arg>
+        <arg choice="req">install</arg>
 
-      <arg choice="plain"><replaceable>texlive-latex3</replaceable></arg>
-    </cmdsynopsis>
+        <arg choice="plain"><replaceable>texlive-latex3</replaceable></arg>
+      </cmdsynopsis>
+    </section>
 
-    <para>Поддержка набора текстов на национальных языках для LaTeX доступна в
-    виде отдельных пакетов дистрибутива Ubuntu. Список языковых пакетов можно
-    посомотреть, выполнив команду:</para>
+    <section>
+      <title>Ubuntu 18.04 "Bionic"</title>
 
-    <cmdsynopsis>
-      <command>aptitude</command>
+      <para>Можно установить полный дистрибутив TexLive <link
+      xlink:href="https://www.tug.org/texlive/">TexLive</link>.</para>
 
-      <arg choice="req">search</arg>
+      <para>Для установки издательской системы LaTeX необходимо выполнить
+      команду:</para>
 
-      <arg choice="plain"><replaceable>texlive-lang</replaceable></arg>
-    </cmdsynopsis>
+      <cmdsynopsis>
+        <command>sudo aptitude</command>
 
-    <para>Может быть получен следующий список пакетов:</para>
+        <arg choice="req">install</arg>
 
-    <para><literallayout><computeroutput>p texlive-lang-african - TeX Live: African scripts
+        <arg choice="plain"><replaceable>texlive-full</replaceable></arg>
+      </cmdsynopsis>
+
+      <para>При этом дополнительно будут установлены современные варианты
+      издательской системы <link
+      xlink:href="https://tug.org/xetex/">XeTex</link> и <link
+      xlink:href="http://luatex.org/">LuaTex</link> и все языковые
+      пакеты.</para>
+    </section>
+
+    <section>
+      <title>Установка языковых пакетов</title>
+
+      <para>Поддержка набора текстов на национальных языках для LaTeX доступна
+      в виде отдельных пакетов дистрибутива Ubuntu. Список языковых пакетов
+      можно посомотреть, выполнив команду:</para>
+
+      <cmdsynopsis>
+        <command>aptitude</command>
+
+        <arg choice="req">search</arg>
+
+        <arg choice="plain"><replaceable>texlive-lang</replaceable></arg>
+      </cmdsynopsis>
+
+      <para>Может быть получен следующий список пакетов:</para>
+
+      <para><literallayout><computeroutput>p texlive-lang-african - TeX Live: African scripts
 p texlive-lang-all - TeX Live: metapackage depending on all TeX Live language packages
 v texlive-lang-all:i386 - 
 p texlive-lang-arabic - TeX Live: Arabic 
@@ -102,46 +129,40 @@ p texlive-lang-portuguese - TeX Live: Portuguese
 p texlive-lang-spanish - TeX Live: Spanish
 </computeroutput></literallayout></para>
 
-    <para>Можно установить все языковые пакеты LaTex
-    <emphasis>texlive-lang-all</emphasis>, либо выбрать только необходимые. Я
-    использую в основном только русский и английский языки:</para>
+      <para>Можно установить все языковые пакеты LaTex
+      <emphasis>texlive-lang-all</emphasis>, либо выбрать только необходимые.
+      Я использую в основном только русский и английский языки:</para>
 
-    <cmdsynopsis>
-      <command>sudo</command>
-    </cmdsynopsis>
+      <cmdsynopsis>
+        <command>sudo aptitude</command>
 
-    <cmdsynopsis>
-      <command>aptitude</command>
+        <arg choice="req">install</arg>
 
-      <arg choice="req">install</arg>
+        <arg choice="plain"><replaceable>texlive-lang-english
+        texlive-lang-cyrillic</replaceable></arg>
+      </cmdsynopsis>
 
-      <arg choice="plain"><replaceable>texlive-lang-english
-      texlive-lang-cyrillic</replaceable></arg>
-    </cmdsynopsis>
+      <para>Также, необходимо установить шрифты для работы с кириллическим
+      символами:</para>
 
-    <para>Также, необходимо установить шрифты для работы с кириллическим
-    символами:</para>
+      <cmdsynopsis>
+        <command>sudo aptitude</command>
 
-    <cmdsynopsis>
-      <command>sudo</command>
-    </cmdsynopsis>
+        <arg choice="req">install</arg>
 
-    <cmdsynopsis>
-      <command>aptitude</command>
+        <arg
+        choice="plain"><replaceable>texlive-fonts-extra</replaceable></arg>
+      </cmdsynopsis>
 
-      <arg choice="req">install</arg>
+      <para>В случае отсутствия требуемых шрифтов при вёрстке документа LaTeX
+      может генерировать вот такую ошибку (см. подсказку на <link
+      xlink:href="http://tex.stackexchange.com/questions/5088/what-is-wrong-with-cyrillic-package">StackExchange</link>
+      ):</para>
 
-      <arg choice="plain"><replaceable>texlive-fonts-extra</replaceable></arg>
-    </cmdsynopsis>
-
-    <para>В случае отсутствия требуемых шрифтов при вёрстке документа LaTeX
-    может генерировать вот такую ошибку (см. подсказку на <link
-    xlink:href="http://tex.stackexchange.com/questions/5088/what-is-wrong-with-cyrillic-package">StackExchange</link>
-    ):</para>
-
-    <para><literallayout><computeroutput>! Font T2A/cmr/m/n/10=larm1000 at 10.0pt not loadable:
+      <para><literallayout><computeroutput>! Font T2A/cmr/m/n/10=larm1000 at 10.0pt not loadable:
   Metric (TFM) file not found.</computeroutput>
     </literallayout></para>
+    </section>
   </section>
 
   <!--

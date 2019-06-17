@@ -109,11 +109,7 @@
             <title>Обновить кеш пакетов</title>
 
             <cmdsynopsis>
-              <command>sudo</command>
-            </cmdsynopsis>
-
-            <cmdsynopsis>
-              <command>apt</command>
+              <command>sudo apt</command>
 
               <arg choice="req">update</arg>
             </cmdsynopsis>
@@ -123,11 +119,7 @@
             <title>Установить ПО LXD</title>
 
             <cmdsynopsis>
-              <command>sudo</command>
-            </cmdsynopsis>
-
-            <cmdsynopsis>
-              <command>apt</command>
+              <command>sudo apt</command>
 
               <arg choice="req">install</arg>
 
@@ -144,11 +136,7 @@
             <title>Установить ПО LXD</title>
 
             <cmdsynopsis>
-              <command>sudo</command>
-            </cmdsynopsis>
-
-            <cmdsynopsis>
-              <command>snap</command>
+              <command>sudo snap</command>
 
               <arg choice="req">install</arg>
 
@@ -201,89 +189,72 @@
       для создания пулов для контейнеров LXD.</para>
     </note>
 
-    <procedure xml:id="InitLXD">
-      <title>Инициализация LXD</title>
+    <procedure xml:id="InitLXDInteractive">
+      <title>Интерактивная инициализация сервиса LXD</title>
+
+      <cmdsynopsis>
+        <command>lxd</command>
+
+        <arg choice="req">init</arg>
+      </cmdsynopsis>
+
+      <para>В консольном интерактивном режиме будут заданы несколько вопросов
+      по настройке сервиса LXD:</para>
 
       <step>
-        <title>Интерактивная инициализация LXD</title>
+        <title>Would you like to use LXD clustering? (yes/no)
+        [default=no]:</title>
 
         <cmdsynopsis>
-          <command>lxd</command>
+          <group choice="plain">
+            <arg>yes</arg>
 
-          <arg choice="req">init</arg>
+            <arg>no</arg>
+          </group>
         </cmdsynopsis>
 
-        <para>В консольном интерактивном режиме будут заданы несколько
-        вопросов по настройке сервиса LXD:</para>
+        <para>С какой-то версии (<emphasis>видимо с 3.0</emphasis>) LXD стал
+        поддерживать кластерную работу на нескольких рабочих станциях. Режим
+        кластеризации описан <link
+        xlink:href="https://lxd.readthedocs.io/en/latest/clustering/">в
+        официальной документации</link>. При работе в кластерном режиме
+        контейнеры могут быть запущены с любого узла кластера на любом другом
+        узле кластера.</para>
 
-        <substeps>
+        <para>Если ответить <guimenuitem role="answer:yes">yes</guimenuitem>,
+        то будут заданы следующие вопросы по настройке кластера LXD:</para>
+
+        <stepalternatives performance="optional" role="answer:yes">
           <step>
-            <title>Would you like to use LXD clustering? (yes/no)
-            [default=no]:</title>
+            <title>What name should be used to identify this node in the
+            cluster? [default=xxxxxxx]:</title>
 
-            <para>С какой-то версии (<emphasis>видимо с 3.0</emphasis>) LXD
-            стал поддерживать кластерную работу на нескольких рабочих
-            станциях. Режим кластеризации описан <link
-            xlink:href="https://lxd.readthedocs.io/en/latest/clustering/">в
-            официальной документации</link>. При работе в кластерном режиме
-            контейнеры могут быть запущены с любого узла кластера на любом
-            другом узле кластера.</para>
-
-            <substeps>
-              <step>
-                <title>What name should be used to identify this node in the
-                cluster? [default=xxxxxxx]:</title>
-
-                <!-- Ветка для ответа yes -->
-
-                <para>Это имя узла в кластере. Удобно использовать DNS-имена
-                хостов в локальной вычислительной сети.</para>
-              </step>
-
-              <step>
-                <title>What IP address or DNS name should be used to reach
-                this node? [default=xx.xx.xx.xx]:</title>
-
-                <para>Здесь необходимо ввести IP-адрес или DNS-имя, с помощью
-                которого узлы кластера смогут подключаться в данный кластер.
-                То есть, это имя или адрес <emphasis role="bold">ведущего
-                узла</emphasis> кластера LXD.</para>
-              </step>
-
-              <step>
-                <title>Are you joining an existing cluster? (yes/no)
-                [default=no]:</title>
-
-                <para>Здесь спрашивается о существовании кластера.</para>
-              </step>
-
-              <step>
-                <title>Setup password authentication on the cluster? (yes/no)
-                [default=yes]:</title>
-
-                <para>Будет ли использоваться пароль для входа в
-                кластер.</para>
-
-                <tip>
-                  <para>Ответ: yes</para>
-                </tip>
-              </step>
-
-              <step>
-                <title>Trust password for new clients:</title>
-
-                <para>Необходимо указать пароль для подключения новых
-                клиентов.</para>
-              </step>
-            </substeps>
+            <para>Это имя узла в кластере. Удобно использовать DNS-имена
+            хостов в локальной вычислительной сети.</para>
           </step>
 
           <step>
-            <title>Do you want to configure a new local storage pool? (yes/no)
+            <title>What IP address or DNS name should be used to reach this
+            node? [default=xx.xx.xx.xx]:</title>
+
+            <para>Здесь необходимо ввести IP-адрес или DNS-имя, с помощью
+            которого узлы кластера смогут подключаться в данный кластер. То
+            есть, это имя или адрес <emphasis role="bold">ведущего
+            узла</emphasis> кластера LXD.</para>
+          </step>
+
+          <step>
+            <title>Are you joining an existing cluster? (yes/no)
+            [default=no]:</title>
+
+            <para>Здесь спрашивается о существовании кластера.</para>
+          </step>
+
+          <step>
+            <title>Setup password authentication on the cluster? (yes/no)
             [default=yes]:</title>
 
-            <para>Необходимо сконфигурировать пул для создания файловых систем
-            контейнеров.</para>
+            <para>Будет ли использоваться пароль для входа в кластер.</para>
 
             <tip>
               <para>Ответ: yes</para>
@@ -291,81 +262,115 @@
           </step>
 
           <step>
-            <title>Name of the storage backend to use (btrfs, dir, lvm, zfs)
-            [default=zfs]:</title>
+            <title>Trust password for new clients:</title>
 
-            <para>Тип системы управления пулами.</para>
-
-            <tip>
-              <para>Ответ: dir. Контейннеры в существующей файловой
-              системе.</para>
-            </tip>
+            <para>Необходимо указать пароль для подключения новых
+            клиентов.</para>
           </step>
+        </stepalternatives>
+      </step>
 
-          <step>
-            <title>Do you want to configure a new remote storage pool?
-            (yes/no) [default=no]:</title>
+      <step>
+        <title>Do you want to configure a new local storage pool? (yes/no)
+        [default=yes]:</title>
 
-            <para>Оказывается можно организовать удалённый пул для
-            контейнеров.</para>
-          </step>
+        <para>Необходимо сконфигурировать пул для создания файловых систем
+        контейнеров.</para>
 
-          <step>
-            <title>Would you like to connect to a MAAS server? (yes/no)
-            [default=no]:</title>
+        <tip>
+          <para>Ответ: yes</para>
+        </tip>
+      </step>
 
-            <para>Оказывается можно подключиться к MAAS-серверу.</para>
-          </step>
+      <step>
+        <title>Name of the storage backend to use (btrfs, dir, lvm, zfs)
+        [default=zfs]:</title>
 
-          <step>
-            <title>Would you like to configure LXD to use an existing bridge
-            or host interface? (yes/no) [default=no]:</title>
+        <para>Тип системы управления пулами.</para>
 
-            <para>Это вопрос об использовании говтого основного
-            интерфейса.</para>
-          </step>
+        <tip>
+          <para>Ответ: dir. Контейннеры в существующей файловой
+          системе.</para>
+        </tip>
+      </step>
 
-          <step>
-            <title>Would you like to create a new Fan overlay network?
-            (yes/no) [default=yes]:</title>
+      <step>
+        <title>Do you want to configure a new remote storage pool? (yes/no)
+        [default=no]:</title>
 
-            <para>Что это???</para>
+        <para>Оказывается можно организовать удалённый пул для
+        контейнеров.</para>
+      </step>
 
-            <note>
-              <para>Создались следующие сетевые интерфейсы:</para>
+      <step>
+        <title>Would you like to connect to a MAAS server? (yes/no)
+        [default=no]:</title>
 
-              <itemizedlist>
-                <listitem>
-                  <para>lxdfan0: мост на lxdfan0-mtu lxdfan0-fan</para>
-                </listitem>
+        <para>Оказывается можно подключиться к MAAS-серверу.</para>
+      </step>
 
-                <listitem>
-                  <para>lxdfan0-mtu</para>
-                </listitem>
+      <step>
+        <title>Would you like to configure LXD to use an existing bridge or
+        host interface? (yes/no) [default=no]:</title>
 
-                <listitem>
-                  <para>lxdfan0-fan</para>
-                </listitem>
-              </itemizedlist>
-            </note>
-          </step>
+        <para>Это вопрос об использовании говтого основного интерфейса.</para>
+      </step>
 
-          <step>
-            <title>Would you like stale cached images to be updated
-            automatically? (yes/no) [default=yes]</title>
+      <step>
+        <title>Would you like to create a new Fan overlay network? (yes/no)
+        [default=yes]:</title>
 
-            <para>Обновлять автоматически или не обновлять скачанные образы
-            контейнеров.</para>
-          </step>
+        <para>Что это???</para>
 
-          <step>
-            <title>Would you like a YAML "lxd init" preseed to be printed?
-            (yes/no) [default=no]:</title>
+        <note>
+          <para>Создались следующие сетевые интерфейсы:</para>
 
-            <para>Вывести на экран созданную конфигурацию сервиса LXD.</para>
-          </step>
-        </substeps>
+          <itemizedlist>
+            <listitem>
+              <para>lxdfan0: мост на lxdfan0-mtu lxdfan0-fan</para>
+            </listitem>
+
+            <listitem>
+              <para>lxdfan0-mtu</para>
+            </listitem>
+
+            <listitem>
+              <para>lxdfan0-fan</para>
+            </listitem>
+          </itemizedlist>
+        </note>
+      </step>
+
+      <step>
+        <title>Would you like stale cached images to be updated automatically?
+        (yes/no) [default=yes]</title>
+
+        <para>Обновлять автоматически или не обновлять скачанные образы
+        контейнеров.</para>
+      </step>
+
+      <step>
+        <title>Would you like a YAML "lxd init" preseed to be printed?
+        (yes/no) [default=no]:</title>
+
+        <para>Вывести на экран созданную конфигурацию сервиса LXD.</para>
       </step>
     </procedure>
+
+    <!-- Типовая процедура инициализации LXD
+$ lxd init
+Would you like to use LXD clustering? (yes/no) [default=no]: 
+Do you want to configure a new storage pool? (yes/no) [default=yes]: 
+Name of the new storage pool [default=default]: 
+Name of the storage backend to use (btrfs, ceph, dir, lvm, zfs) [default=zfs]: dir
+Would you like to connect to a MAAS server? (yes/no) [default=no]: 
+Would you like to create a new local network bridge? (yes/no) [default=yes]: 
+What should the new bridge be called? [default=lxdbr0]: 
+What IPv4 address should be used? (CIDR subnet notation, “auto” or “none”) [default=auto]: 
+What IPv6 address should be used? (CIDR subnet notation, “auto” or “none”) [default=auto]: 
+Would you like LXD to be available over the network? (yes/no) [default=no]: 
+Would you like stale cached images to be updated automatically? (yes/no) [default=yes] 
+Would you like a YAML "lxd init" preseed to be printed? (yes/no) [default=no]: 
+-->
   </section>
 </article>
