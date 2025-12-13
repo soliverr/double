@@ -8,12 +8,19 @@
 
 #### Tags
 
+#### Links
+
+Use markdown links
 ## Publishing
 
 ### Digital garden
 
 #### Quartz
-### GitHub Pages
+### GitHub 
+
+#### GitHub Pages
+
+#### GitHub ReadMe
 
 ## Translation and Internalization
 
