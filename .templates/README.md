@@ -1,0 +1,1 @@
+Keep templates for the notes here.
