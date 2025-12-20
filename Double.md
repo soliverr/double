@@ -65,7 +65,7 @@ Below are the key milestones in the project’s evolution.
 
 If you’re interested in how the project started and the foundational ideas (in Russian), see:
 
-* [[Double.version.2]]
+* [Double.version.2](Double.version.2.md)
 * [[Double.version.1|Double.version.1]]
 * [[Double.version.0]]
 * [Double.xml](./ideas/soliverr/Double.xml)
