@@ -5,5 +5,6 @@
   "vimMode": true,
   "attachmentFolderPath": ".media",
   "alwaysUpdateLinks": true,
-  "useMarkdownLinks": true
+  "useMarkdownLinks": true,
+  "newLinkFormat": "relative"
 }
