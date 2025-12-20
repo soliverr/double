@@ -1,1 +1,1 @@
-../Double.md
+See [Double](../Double.md)

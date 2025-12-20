@@ -1,1 +1,1 @@
-Каталог для описания навыков агента Double.
+Put **Double**'s skill here into sub-directories.
