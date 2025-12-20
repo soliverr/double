@@ -4,5 +4,6 @@
   "showLineNumber": true,
   "vimMode": true,
   "attachmentFolderPath": ".media",
-  "alwaysUpdateLinks": true
+  "alwaysUpdateLinks": true,
+  "useMarkdownLinks": true
 }

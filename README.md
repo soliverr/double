@@ -1,1 +1,1 @@
-Please see [[Double]]
+Please see [Double](Double.md)
