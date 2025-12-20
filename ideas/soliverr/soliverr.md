@@ -1,1 +1,1 @@
-[[@soliverr|@soliverr ]] describes his local ideas in this folder.
+Space to describe personal ideas of [[@soliverr|@soliverr ]].

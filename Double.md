@@ -1,70 +1,71 @@
-# Double 
+# Double
 
->[!summary]
->**The program that is not exist... yet!**
-## Общие соображения
+> [!summary]
+> **The program that does not exist… yet!**
 
-Здесь изложены основные идеи, которые закрепляются как общие правила и  принимаемые концепции сообществом участников проекта Double.
+## General Considerations
 
-Если вы по каким-то причинам не разделяете ниже приведённые идеи и концепции, то у вас есть два пути:
+This document outlines the core ideas treated as shared rules and community-endorsed concepts for the Double project.
 
-1. Не принимать участие в проекте Double и попробовать реализовать свои идеи в виде самостоятельного проекта
-2. Изложить свои идеи согласно раздела [#ideas] и совместно с другими участниками проекта помогать эволюции проекта, объединяя индивидуальное знание и собственные концепции в общее дерево знаний проекта Double.
+If you do not agree with the ideas and concepts below, you have two options:
 
-## Генеральная идея
+1. Do not participate in the Double project and try to implement your ideas as a separate project.
+2. Present your ideas as described in section [#ideas] and, together with other contributors, help the project evolve by merging individual knowledge and concepts into the Double knowledge tree.
 
-Наиглавнейшая идея, парадигма, данного проекта - создание личной цифровой копии для взаимодействия в цифровом мире, информационной ноосфере, вычислительной экосистеме.
+## Grand Idea
 
-Личная цифровая копия первоначально является набором навыков взаимодействия с информационными системами в самом широком смысле этого слова, взаимодействия посредством вычислительных устройств (компьютеров, смартфонов, гаджетов) и взаимодействия, направленного на вас со стороны цифрового мира.
+The central paradigm of the project is to create a personal digital twin of one’s knowledge, skills, and capabilities for interacting with the digital world and computing ecosystems.
 
-Цифровая копия изначально создаётся как персональная копия ваших навыков, которая может и должна непрерывно эволюционировать и улучшаться.
+A personal digital twin is initially a bundle of skills for interacting with information systems in the broadest sense—interactions through computing devices (computers, smartphones, gadgets) and interactions directed at you from the digital world.
 
-По желанию и согласию участников проекта, локальные персональные цифровые копии могут объединяться для создания общего, универсального и провалидированного всеми участниками проекта Double общедоступного агента, объединяющего лучшие персональные навыки участников.
+The digital twin is created as your personal copy of skills and should continually evolve and improve.
 
-Универсальный агент Double может выступать в качестве гуру для локальных цифровых копий новых участников или пользователей проекта Double.
+By choice and consent of project participants, local personal digital twins can be merged to create a shared, universal agent validated by all Double contributors, aggregating the best personal skills from participants.
 
-Таким образом, здесь заявляется основополагающий принцип данного проекта:
+The universal Double agent can act as a mentor for the local digital twins of new participants or users of the Double project.
 
- **Создание открытой системы накопления и взаимообмена знаниями между всеми участниками проекта Double.**
+This establishes the project’s foundational principle:
+
+ **Build an open system for accumulating and exchanging knowledge among all Double project participants.**
  
-*Сами накапливаемые знания и навыки могут быть как **открытыми** и доступными любому участнику проекта и внешнему пользователю, так и **закрытыми**, доступными индивидуально или по платной подписке.*
+*The accumulated knowledge and skills may be **open**, available to any participant or external user, or **restricted**, available individually or via paid subscription.*
 
-## Цели проекта
-
-Значимые для всех участников цели проекта содержаться в каталоге [[goals]].
-
-Для уточнения и планирования задач по достижению целей, в каталоге [[goals]] создаются каталоги целей, подцелей с файлами, содержащими списки решаемых задач.
-
-Для сложных целей, описываемых несколькими словами, необходимо использовать [Camel case](https://en.wikipedia.org/wiki/Camel_case) именование.
-
-## Участники проекта
-
-Каждый участник проекта создаёт личный файл в каталоге [[people]]. Данный файл является уникальным идентификатором участника и указывается в метаданных других информационных ресурсов данного проекта.
-Содержимое файла участников регламентируется общепринятыми нормами морали и законодательства.
-
-## Идеи
-
-Индивидуальные идеи, размещаются в каталоге [[ideas]], где создаются каталоги для каждого участника проекта.
-
-Иерархия и содержимое каталога индивидуальных идей проектируется единообразным способом, для облегчения задачи объедения индивидуальных знаний и получения общезначимого знания группы.
+## Goals
 
 
-## Навыки
+Goals relevant to all participants are located in [[goals]].
 
-Общезначимые навыки размещаются в каталоге [[skills]].
+To clarify and plan tasks for achieving goals, the [[goals]] directory contains subdirectories for goals and subgoals with files listing the tasks to solve.
 
-Для каждого выделенного навыка создаётся отдельный каталог. Для наименования навыков используются общеизвестные слова английского языка. 
-Для сложных навыков, описываемых несколькими словами, необходимо использовать [Camel case](https://en.wikipedia.org/wiki/Camel_case) именование.
+Use [CamelCase](https://en.wikipedia.org/wiki/Camel_case) for complex goals described with multiple words.
 
-## История
+## Participants
 
-Значимые исторические моменты проекта отражены в индивидуальном знании участников проекта.
+Each participant creates a personal file in [[people]]. This file serves as the participant’s unique identifier and is referenced in metadata for other project resources. Content must comply with generally accepted moral standards and the law.
 
-Ниже перечислены наиболее важные этапы развития проекта.
+## Ideas
 
-### Начальная идея
+Individual ideas live in [[ideas]], where each participant creates their own subdirectory.
 
-Если вам интересно как начинался этот проект и те базовые идеи, которые лежат в его основе, и вы читаете по-русски, то ознакомьтесь со следующими файлами:
+The hierarchy and content of personal idea directories should be structured uniformly to simplify merging individual knowledge into group-wide knowledge.
 
-* [[ideas/soliverr/Double|Double]]
+## Skills
+
+Shared skills are stored in [[skills]].
+
+Each skill gets its own directory. Use widely recognized English words for skill names. Use [CamelCase](https://en.wikipedia.org/wiki/Camel_case) for multiword skills.
+
+## History
+
+Important historical milestones of the project are captured in participants’ individual knowledge.
+
+Below are the key milestones in the project’s evolution.
+
+### Initial Concept
+
+If you’re interested in how the project started and the foundational ideas (in Russian), see:
+
+* [[Double.version.2]]
+* [[Double.version.1|Double.version.1]]
+* [[Double.version.0]]
 * [Double.xml](./ideas/soliverr/Double.xml)
