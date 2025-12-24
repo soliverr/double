@@ -35,8 +35,7 @@
               "title": "Double"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -211,10 +210,10 @@
       "wikipedia-search:Open Article": false
     }
   },
-  "active": "72d5dba6db0e2e8a",
+  "active": "2366135b9dc4a530",
   "lastOpenFiles": [
-    "ideas/soliverr/Double.version.2.md",
     "Double.md",
+    "ideas/soliverr/Double.version.2.md",
     "ideas/soliverr/skills/skills.md",
     "ideas/soliverr/goals/goals.md",
     "ideas/ideas.md",
