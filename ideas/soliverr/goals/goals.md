@@ -4,6 +4,7 @@
 
 ### Obsidian
 
+* [install-obsidian](install-obsidian/install-obsidian.md)
 #### Templates
 
 #### Tags
@@ -11,11 +12,16 @@
 #### Links
 
 Use markdown links
+#### Sync to GitHub
+
+How to sync to Adnroid
+
 ## Publishing
 
 ### Digital garden
 
 #### Quartz
+
 ### GitHub 
 
 #### GitHub Pages
@@ -28,8 +34,10 @@ Use markdown links
 
 ## Merge knowledge
 
-## Create Double agent
+## Create Double Agent
 
-### Private and local Double agent
+* [Double.version.2](../Double.version.2.md)
 
-### Cloud Double agent
+### Private and local Double Agent
+
+### Cloud Double Agent

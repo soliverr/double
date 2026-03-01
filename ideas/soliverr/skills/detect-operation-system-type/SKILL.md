@@ -15,7 +15,9 @@ Detect the operating system type and specific version. Works cross-platform for 
 
 ## Strategy
 
-Always try multiple methods and cross-validate. Report the most specific version info available.
+1. **Ask User for Format**: Before detection, ask the user for the desired output format (`text`, `json`, or `yaml`). Default to `text` if not specified.
+2. **Detection**: Always try multiple methods and cross-validate. Report the most specific version info available.
+3. **Formatting**: Present the results in the requested format.
 
 ---
 
@@ -27,16 +29,16 @@ Run the following bash command to determine the OS family:
 uname -s 2>/dev/null || echo "uname_unavailable"
 ```
 
-| Output        | OS Family     |
-|---------------|---------------|
-| `Linux`       | Linux         |
-| `Darwin`      | macOS         |
-| `MINGW*` / `MSYS*` / `CYGWIN*` | Windows (via Git Bash/WSL boundary) |
-| `FreeBSD`     | FreeBSD       |
-| `OpenBSD`     | OpenBSD       |
-| `NetBSD`      | NetBSD        |
-| `SunOS`       | Solaris/illumos |
-| `uname_unavailable` | Likely native Windows CMD — proceed to Windows detection |
+| Output                         | OS Family                                                |
+| ------------------------------ | -------------------------------------------------------- |
+| `Linux`                        | Linux                                                    |
+| `Darwin`                       | macOS                                                    |
+| `MINGW*` / `MSYS*` / `CYGWIN*` | Windows (via Git Bash/WSL boundary)                      |
+| `FreeBSD`                      | FreeBSD                                                  |
+| `OpenBSD`                      | OpenBSD                                                  |
+| `NetBSD`                       | NetBSD                                                   |
+| `SunOS`                        | Solaris/illumos                                          |
+| `uname_unavailable`            | Likely native Windows CMD — proceed to Windows detection |
 
 ---
 
@@ -45,7 +47,10 @@ uname -s 2>/dev/null || echo "uname_unavailable"
 ### 🐧 Linux
 
 ```bash
-# Best: reads distro name + version
+# Best: get distro name, description and release version
+lsb_release -a
+
+# Good: reads distro name + version
 cat /etc/os-release 2>/dev/null
 
 # Fallback options (try in order if above is missing)
@@ -59,12 +64,21 @@ cat /etc/arch-release 2>/dev/null
 uname -r
 ```
 
+**Parse from `lsb_release -a` command:**
+* `Distributor ID` → Linux distribution
+* `Description` → description for the distro
+* `Release` →  release version
+* `Codename` → nickname for the release
+
+*It is preferred to install `lsb-relase` package to detect Linux distro's version.*
+
 **Parse from `/etc/os-release`:**
 - `NAME` → distro name (e.g., Ubuntu, Fedora, Debian)
 - `VERSION_ID` → version number
 - `PRETTY_NAME` → human-readable full string (preferred for display)
 
 **Common distros and their primary file:**
+
 | Distro         | Primary File             |
 |----------------|--------------------------|
 | Ubuntu/Mint    | `/etc/os-release`        |
@@ -94,6 +108,7 @@ uname -m          # Architecture: x86_64 or arm64
 - `BuildVersion` → e.g., `23E224`
 
 **macOS version name mapping** (include in output):
+
 | Version | Name        |
 |---------|-------------|
 | 15.x    | Sequoia     |
@@ -120,6 +135,7 @@ ver
 ```
 
 **Windows version mapping:**
+
 | Build     | Name                    |
 |-----------|-------------------------|
 | 10.0.22631 | Windows 11 23H2        |
@@ -197,9 +213,34 @@ Architecture: arm64 (Apple Silicon)
 
 Or for Windows:
 ```
-OS:           Windows 11 Pro (23H2)
-Build:        10.0.22631
 Architecture: x86_64
+----------------------
+```
+
+### 📄 JSON Format
+
+```json
+{
+  "os": "Ubuntu 22.04.5 LTS",
+  "distributor_id": "Ubuntu",
+  "description": "Ubuntu 22.04.5 LTS",
+  "release": "22.04",
+  "codename": "jammy",
+  "kernel": "6.8.0-101-generic",
+  "architecture": "x86_64"
+}
+```
+
+### 📄 YAML Format
+
+```yaml
+os: Ubuntu 22.04.5 LTS
+distributor_id: Ubuntu
+description: Ubuntu 22.04.5 LTS
+release: "22.04"
+codename: jammy
+kernel: 6.8.0-101-generic
+architecture: x86_64
 ```
 
 ---

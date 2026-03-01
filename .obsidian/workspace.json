@@ -8,34 +8,125 @@
         "type": "tabs",
         "children": [
           {
-            "id": "2366135b9dc4a530",
+            "id": "ae5323b76df8a314",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ideas/soliverr/Double.version.2.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Double.version.2"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Граф"
             }
           },
           {
-            "id": "72d5dba6db0e2e8a",
+            "id": "f8ec78729717f983",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Double.md",
+                "file": "ideas/soliverr/tools/tools.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Double"
+              "title": "tools"
+            }
+          },
+          {
+            "id": "e8263d6c129aba3d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ideas/soliverr/tools/detect-opeartion-system-type/detect-opeartion-system-type.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "detect-opeartion-system-type"
+            }
+          },
+          {
+            "id": "20e37ee64b523bb0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ideas/soliverr/tools/tools.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "tools"
+            }
+          },
+          {
+            "id": "1d38f8ce43365355",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ideas/soliverr/skills/skills.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "skills"
+            }
+          },
+          {
+            "id": "1b456017929eb869",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ideas/soliverr/knowledge/knowledge.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "knowledge"
+            }
+          },
+          {
+            "id": "cb9e10922f239b99",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ideas/soliverr/goals/goals.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "goals"
+            }
+          },
+          {
+            "id": "c75d0fe3bf533dfd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ideas/soliverr/capabilities/capabilities.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "capabilities"
+            }
+          },
+          {
+            "id": "74bcce7002c7ce6f",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Граф"
             }
           }
-        ]
+        ],
+        "currentTab": 8
       }
     ],
     "direction": "vertical"
@@ -58,7 +149,7 @@
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
-              "title": "Files"
+              "title": "Файловый менеджер"
             }
           },
           {
@@ -102,25 +193,6 @@
         "id": "545a5a6215b60f8e",
         "type": "tabs",
         "children": [
-          {
-            "id": "709f249fe0dd37b0",
-            "type": "leaf",
-            "state": {
-              "type": "backlink",
-              "state": {
-                "file": "README_RU.md",
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
-              },
-              "icon": "links-coming-in",
-              "title": "Backlinks for README_RU"
-            }
-          },
           {
             "id": "8340ccadf694dafd",
             "type": "leaf",
@@ -188,9 +260,28 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
+          },
+          {
+            "id": "6055f1b44a022084",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "ideas/soliverr/skills/detect-operation-system-type/SKILL.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for SKILL"
+            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -198,49 +289,55 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "bases:Create new base": false,
+      "switcher:Меню быстрого перехода": false,
+      "graph:Граф": false,
+      "canvas:Создать новый холст": false,
+      "daily-notes:Сегодняшняя заметка": false,
+      "templates:Вставить шаблон": false,
+      "command-palette:Открыть палитру команд": false,
+      "bases:Создать новую базу": false,
       "obsidian-git:Open Git source control": false,
       "templater-obsidian:Templater": false,
       "wikipedia-search:Open Article": false
     }
   },
-  "active": "2366135b9dc4a530",
+  "active": "74bcce7002c7ce6f",
   "lastOpenFiles": [
-    "Double.md",
-    "ideas/soliverr/Double.version.2.md",
-    "ideas/soliverr/skills/skills.md",
+    "ideas/soliverr/abilities/abilities.md",
+    "ideas/soliverr/capabilities/capabilities.md",
     "ideas/soliverr/goals/goals.md",
-    "ideas/ideas.md",
-    "README.md",
+    "ideas/soliverr/knowledge/knowledge.md",
+    "ideas/soliverr/skills/skills.md",
+    "ideas/soliverr/tools/tools.md",
+    "ideas/soliverr/tools/detect-opeartion-system-type/detect-opeartion-system-type.md",
     "ideas/soliverr/soliverr.md",
-    "people/@soliverr.md",
-    "people/people.md",
-    "ideas/soliverr/Double.version.1.md",
-    "ideas/soliverr/Double.version.0.md",
-    "ideas/soliverr/subjects/PerfomanceTesting.md",
-    "().md",
-    "ideas/soliverr/skills",
-    "ideas/soliverr/subjects/subjects.md",
-    "ideas/soliverr/subjects/PasswordManagers.xml",
-    "ideas/soliverr/subjects/LXD.xml",
-    "ideas/soliverr/subjects/InstallLaTex.xml",
-    "ideas/soliverr/subjects/Flatpack.xml",
-    "ideas/soliverr/subjects/Docker.xml",
-    "ideas/soliverr/subjects/DocBookEditors.xml",
-    "ideas/soliverr/subjects/Chef.xml",
-    "ideas/soliverr/subjects",
-    "ideas/soliverr/README.md",
-    "ideas/soliverr/Double.xml",
-    "ideas/README.md",
-    "people/README.md",
-    "README_RU.md",
-    "example.md",
-    "subjects/PerfomanceTesting.md"
+    "ideas/ideas.md",
+    "ideas/soliverr/capabilities/bash/bash.md",
+    "ideas/soliverr/tools/detect-operation-system-type/detect-operation-system-type.md",
+    "ideas/soliverr/tools/detect-opeartion-system-type/power-shell/power-shell.md",
+    "ideas/soliverr/tools/detect-opeartion-system-type/power-shell/detect_operation_system_type.ps1",
+    "ideas/soliverr/tools/detect-opeartion-system-type/power-shell",
+    "ideas/soliverr/tools/detect-operation-system-type/power-shell/power-shell.md",
+    "ideas/soliverr/tools/detect-operation-system-type/power-shell/detect_operation_system_type.ps1",
+    "ideas/soliverr/tools/detect-operation-system-type/power-shell",
+    "ideas/soliverr/tools/detect-operation-system-type",
+    "ideas/soliverr/capabilities/power-shell/power-shell.md",
+    "ideas/soliverr/capabilities/power-shell",
+    "ideas/soliverr/capabilities/bash",
+    "ideas/soliverr/skills/detect-operation-system-type/detect-operation-system-type.md",
+    "ideas/soliverr/capabilities",
+    "ideas/soliverr/goals/install-obsidian/install-obsidian.md",
+    "ideas/soliverr/goals/install-nodejs/install-nodejs.md",
+    "ideas/soliverr/abilities/install-obsidian/install-obsidian.md",
+    "ideas/soliverr/abilities/detect-operation-system/detect-operation-system.md",
+    "tools/tools.md",
+    "ideas/soliverr/tools/detect-opeartion-system-type/bash/detect_operation_system_type.sh",
+    "ideas/soliverr/tools/detect-opeartion-system-type/bash/bash.md",
+    "ideas/soliverr/tools/detect-opeartion-system-type/bash",
+    "tools/detect-opeartion-system-type/bash/bash.md",
+    "tools/detect-opeartion-system-type/detect-opeartion-system-type.md",
+    "ideas/soliverr/knowledge/subjects/subjects.md",
+    "ideas/soliverr/knowledge/subjects/PerfomanceTesting.md",
+    "ideas/soliverr/ещщды/ещщды.md"
   ]
 }
