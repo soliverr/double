@@ -1,5 +1,6 @@
-The descriptions of the Double project participants should be located here.
+## Participants Tracking Rules
 
-## Core team
+Rules to maintain community members into the **People** directory:
 
-* [[@soliverr]]
+- Rule
+- Rule

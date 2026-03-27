@@ -1,3 +1,6 @@
-Here should be located directories named for the Double participants. Every participant's directory contains individual knowledge hat may be included into a general knowledge of the Double project.
+## Ideas Tracking Rules
 
-* [soliverr](soliverr/soliverr.md)
+Rules to keep ideas into the **Ideas** directory:
+
+- Rule
+- Rule

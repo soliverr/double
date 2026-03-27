@@ -124,9 +124,273 @@
               "icon": "lucide-git-fork",
               "title": "Граф"
             }
+          },
+          {
+            "id": "bc7037eddde15cd4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ideas/soliverr/knowledge/bluemail.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "bluemail"
+            }
+          },
+          {
+            "id": "3353589bade5ccdf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ideas/soliverr/goals/install-obsidian/install-obsidian.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "install-obsidian"
+            }
+          },
+          {
+            "id": "d4d12e1d3ddd70c1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ideas/soliverr/capabilities/power-shell/power-shell.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "power-shell"
+            }
+          },
+          {
+            "id": "8f68285149bf65a5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ideas/soliverr/Double.version.2.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Double.version.2"
+            }
+          },
+          {
+            "id": "10144b058bd76d12",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ideas/soliverr/abilities/detect-operation-system/detect-operation-system.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "detect-operation-system"
+            }
+          },
+          {
+            "id": "7b06269038aea2fb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ideas/soliverr/tools/detect-opeartion-system-type/detect-opeartion-system-type.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "detect-opeartion-system-type"
+            }
+          },
+          {
+            "id": "bab44cb4e9e1812d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ideas/soliverr/skills/detect-operation-system-type/SKILL.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "SKILL"
+            }
+          },
+          {
+            "id": "2ab3fc5e891fad31",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ideas/soliverr/tools/detect-opeartion-system-type/detect-opeartion-system-type.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "detect-opeartion-system-type"
+            }
+          },
+          {
+            "id": "52e06f44d885310c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ideas/soliverr/tools/detect-opeartion-system-type/power-shell/power-shell.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "power-shell"
+            }
+          },
+          {
+            "id": "627dccd3f9f20d99",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "people/@soliverr.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "@soliverr"
+            }
+          },
+          {
+            "id": "c0b8dfad4fd49e88",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ideas/soliverr/Double.version.2.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Double.version.2"
+            }
+          },
+          {
+            "id": "e25a37489318bbda",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ideas/soliverr/abilities/abilities.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "abilities"
+            }
+          },
+          {
+            "id": "6c41eb4266916a73",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ideas/soliverr/capabilities/capabilities.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "capabilities"
+            }
+          },
+          {
+            "id": "d8a8eb8004161b3e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ideas/soliverr/abilities/abilities.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "abilities"
+            }
+          },
+          {
+            "id": "2967bd252bc978a2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ideas/soliverr/abilities/detect-operation-system/detect-operation-system.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "detect-operation-system"
+            }
+          },
+          {
+            "id": "12fbe8e7311e9e3f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ideas/soliverr/abilities/install-obsidian/install-obsidian.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "install-obsidian"
+            }
+          },
+          {
+            "id": "55873735c0ff8865",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ideas/soliverr/skills/detect-operation-system-type/SKILL.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "SKILL"
+            }
+          },
+          {
+            "id": "867a9d1efa532505",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ideas/soliverr/goals/install-obsidian/install-obsidian.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "install-obsidian"
+            }
+          },
+          {
+            "id": "b91cb77586af7849",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.12.7"
+              },
+              "icon": "lucide-book-up",
+              "title": "примечания к выпуску 1.12.7"
+            }
           }
         ],
-        "currentTab": 8
+        "currentTab": 27
       }
     ],
     "direction": "vertical"
@@ -301,43 +565,43 @@
       "wikipedia-search:Open Article": false
     }
   },
-  "active": "74bcce7002c7ce6f",
+  "active": "b91cb77586af7849",
   "lastOpenFiles": [
+    "ideas/soliverr/skills/detect-operation-system-type/SKILL.md",
+    "ideas/soliverr/skills/detect-operation-system-type/detect-operation-system-type.md",
+    "ideas/soliverr/abilities/install-obsidian/install-obsidian.md",
+    "ideas/soliverr/abilities/detect-operation-system/detect-operation-system.md",
     "ideas/soliverr/abilities/abilities.md",
     "ideas/soliverr/capabilities/capabilities.md",
-    "ideas/soliverr/goals/goals.md",
+    "ideas/soliverr/Double.version.2.md",
+    "bash/bash.md",
+    "people/@soliverr.md",
+    "ideas/soliverr/tools/detect-opeartion-system-type/detect-opeartion-system-type.md",
+    "ideas/soliverr/tools/detect-opeartion-system-type/power-shell/power-shell.md",
+    "bash",
+    "ideas/soliverr/capabilities/power-shell/power-shell.md",
+    "ideas/soliverr/goals/install-obsidian/install-obsidian.md",
+    "ideas/soliverr/knowledge/bluemail.md",
     "ideas/soliverr/knowledge/knowledge.md",
+    "ideas/soliverr/goals/goals.md",
     "ideas/soliverr/skills/skills.md",
     "ideas/soliverr/tools/tools.md",
-    "ideas/soliverr/tools/detect-opeartion-system-type/detect-opeartion-system-type.md",
     "ideas/soliverr/soliverr.md",
     "ideas/ideas.md",
     "ideas/soliverr/capabilities/bash/bash.md",
     "ideas/soliverr/tools/detect-operation-system-type/detect-operation-system-type.md",
-    "ideas/soliverr/tools/detect-opeartion-system-type/power-shell/power-shell.md",
     "ideas/soliverr/tools/detect-opeartion-system-type/power-shell/detect_operation_system_type.ps1",
     "ideas/soliverr/tools/detect-opeartion-system-type/power-shell",
     "ideas/soliverr/tools/detect-operation-system-type/power-shell/power-shell.md",
     "ideas/soliverr/tools/detect-operation-system-type/power-shell/detect_operation_system_type.ps1",
     "ideas/soliverr/tools/detect-operation-system-type/power-shell",
     "ideas/soliverr/tools/detect-operation-system-type",
-    "ideas/soliverr/capabilities/power-shell/power-shell.md",
     "ideas/soliverr/capabilities/power-shell",
     "ideas/soliverr/capabilities/bash",
-    "ideas/soliverr/skills/detect-operation-system-type/detect-operation-system-type.md",
     "ideas/soliverr/capabilities",
-    "ideas/soliverr/goals/install-obsidian/install-obsidian.md",
     "ideas/soliverr/goals/install-nodejs/install-nodejs.md",
-    "ideas/soliverr/abilities/install-obsidian/install-obsidian.md",
-    "ideas/soliverr/abilities/detect-operation-system/detect-operation-system.md",
     "tools/tools.md",
     "ideas/soliverr/tools/detect-opeartion-system-type/bash/detect_operation_system_type.sh",
-    "ideas/soliverr/tools/detect-opeartion-system-type/bash/bash.md",
-    "ideas/soliverr/tools/detect-opeartion-system-type/bash",
-    "tools/detect-opeartion-system-type/bash/bash.md",
-    "tools/detect-opeartion-system-type/detect-opeartion-system-type.md",
-    "ideas/soliverr/knowledge/subjects/subjects.md",
-    "ideas/soliverr/knowledge/subjects/PerfomanceTesting.md",
-    "ideas/soliverr/ещщды/ещщды.md"
+    "ideas/soliverr/tools/detect-opeartion-system-type/bash/bash.md"
   ]
 }
