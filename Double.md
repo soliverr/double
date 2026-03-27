@@ -71,5 +71,7 @@ There are only these main concepts:
 1. [Grand Idea](#grand-idea)
 1. [Double Layout Naming Convention](#double-layout-naming-convention)
 1. [Ideas' Catalog](#ideas)
-1. [Supposed Community](#participants)
+1. [Supposed Community Catalog](#participants)
+1. Main project language is English
+
 
