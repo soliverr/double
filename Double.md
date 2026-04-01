@@ -1,3 +1,7 @@
+---
+double-state: [null, state-0, null]
+---
+
 # Double
 
 >
@@ -65,7 +69,7 @@ The [people](people/people.md) directory is the such kind of place.
 
 Here we are to start any other Double based project.
 
-There are only these main concepts:
+There are only these core concepts:
 
 1. [General Considerations](#general-considerations)
 1. [Grand Idea](#grand-idea)
@@ -74,4 +78,30 @@ There are only these main concepts:
 1. [Supposed Community Catalog](#participants)
 1. Main project language is English
 
+## State of the Double project
+
+Looks like there is a need for one more core concept. It is a **"State of the Double project"**. The state concept defines something like control point or check point for the Double project to traverse into project's historical retrospective and fork from any state a new one.
+
+So as the main project developed further, anyone can jump back and invents his own concept of developing, but there will be common ancestor (*'state-N'*) and then may be a common descendant when a fork will be joined with mainstream. So, think about ***states*** like a divergence and convergence points of the life time of the project.
+
+State is traced by keeping special tags both in-file metadata (markdown properties) and git annotated tags in sync:
+
+- there is a property named `double-state` that keeps a bi-directional list: [`prev`, `current`, `next`] - *array of pointers*,
+- if pointer is not defined, then keep `null` or `none` value for that pointer,
+- project states are published as git annotated tags: `state-0`, `state-1`, etc,
+- ***states*** can be traversed easily after clone using a tag name.
+
+Example commands:
+
+- `git tag -a state-0 -m "State 0: initial baseline"`
+- `git tag -a state-1 -m "State 1: added state tracing section"`
+- `git push origin --tags`
+- `git fetch --tags`
+- `git tag --list "state-*"`
+- `git checkout state-0`
+
+Update policy:
+
+- when moving forward, set `prev` to old `current`, `current` to new value, and optionally `next` to the anticipated successor.
+- keep past tags immutable; add new annotated tags for each milestone.
 
