@@ -102,6 +102,13 @@ Example commands:
 
 Update policy:
 
-- when moving forward, set `prev` to old `current`, `current` to new value, and optionally `next` to the anticipated successor.
-- keep past tags immutable; add new annotated tags for each milestone.
+- when moving forward, set `prev` to old `current`, `current` to new value, and optionally `next` to the anticipated successor,
+- keep past state tags immutable; add new annotated tags for each new state
 
+
+# What to do next
+
+To go into the next "state-1" it is required to clarify the follow things:
+
+* how to maintain ideas in the [ideas](./ideas/ideas.md) folder and outline the direction of the project's development
+* how to maintain participants in the [people](./people/people.md) folder
